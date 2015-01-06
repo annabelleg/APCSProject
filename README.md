@@ -22,5 +22,5 @@ APCSProject
 ######1/5/15
   - edited README to include the premise and specifics of the project
   - started Chronological List of Updates
-######1/6/15
+###### 1/6/15
   - created basic GUI window opener thing (GUI.java, first commit)
