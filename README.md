@@ -4,7 +4,7 @@ APCSProject
 APCS first term final project
 
 Premise of project:
-  A name generator (can be used for picking baby names) based on criteria such as:
+ \n A name generator (can be used for picking baby names) based on criteria such as:
     -gender (primarily male, primarily female, or can be both)
     -how masculine/feminine it is
     -how modern/old-fashioned it is
