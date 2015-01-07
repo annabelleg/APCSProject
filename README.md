@@ -26,3 +26,6 @@ APCSProject
   
 ###### 1/6/15
   - created basic GUI window opener thing (GUI.java, first commit)
+
+###### 1/7/15
+  -
