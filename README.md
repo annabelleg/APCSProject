@@ -28,5 +28,5 @@ APCSProject
   - created basic GUI window opener thing (GUI.java, first commit)
 
 ###### 1/7/15
-  - Mapped out the project on paper
-  - Found a csv of names
+  - Mapped out the project GUI on paper
+  - started csv's of names
