@@ -1,200 +1,201 @@
-Sophia
-Emma
-Olivia
-Isabella
-Ava
-Mia
-Emily
-Abigail
-Madison
-Elizabeth
-Charlotte
-Avery
-Sofia
-Chloe
-Ella
-Harper
-Amelia
-Aubrey
-Addison
-Evelyn
-Natalie
-Grace
-Hannah
-Zoey
-Victoria
-Lillian
-Lily
-Brooklyn
-Samantha
-Layla
-Zoe
-Audrey
-Leah
-Allison
-Anna
-Aaliyah
-Savannah
-Gabriella
-Camila
-Aria
-Kaylee
-Scarlett
-Hailey
-Arianna
-Riley
-Alexis
-Nevaeh
-Sarah
-Claire
-Sadie
-Peyton
-Aubree
-Serenity
-Ariana
-Genesis
-Penelope
-Alyssa
-Bella
-Taylor
-Alexa
-Kylie
-Mackenzie
-Caroline
-Kennedy
-Autumn
-Lucy
-Ashley
-Madelyn
-Violet
-Stella
-Brianna
-Maya
-Skylar
-Ellie
-Julia
-Sophie
-Katherine
-Mila
-Khloe
-Paisley
-Annabelle
-Alexandra
-Nora
-Melanie
-London
-Gianna
-Naomi
-Eva
-Faith
-Madeline
-Lauren
-Nicole
-Ruby
-Makayla
-Kayla
-Lydia
-Piper
-Sydney
-Jocelyn
-Morgan
-Kimberly
-Molly
-Jasmine
-Reagan
-Bailey
-Eleanor
-Alice
-Trinity
-Rylee
-Andrea
-Hadley
-Maria
-Brooke
-Mariah
-Isabelle
-Brielle
-Mya
-Quinn
-Vivian
-Natalia
-Mary
-Liliana
-Payton
-Lilly
-Eliana
-Jade
-Cora
-Paige
-Valentina
-Kendall
-Clara
-Elena
-Jordyn
-Kaitlyn
-Delilah
-Isabel
-Destiny
-Rachel
-Amy
-Mckenzie
-Gabrielle
-Brooklynn
-Katelyn
-Laila
-Aurora
-Ariel
-Angelina
-Aliyah
-Juliana
-Vanessa
-Adriana
-Ivy
-Lyla
-Sara
-Willow
-Reese
-Hazel
-Eden
-Elise
-Josephine
-Kinsley
-Ximena
-Jessica
-Londyn
-Makenzie
-Gracie
-Isla
-Michelle
-Valerie
-Kylee
-Melody
-Catherine
-Adalynn
-Jayla
-Alexia
-Valeria
-Adalyn
-Rebecca
-Izabella
-Alaina
-Margaret
-Alana
-Alivia
-Kate
-Luna
-Norah
-Kendra
-Summer
-Ryleigh
-Julianna
-Jennifer
-Lila
-Hayden
-Emery
-Stephanie
-Angela
-Fiona
-Daisy
-Presley
-Eliza
+Name, unusual, 
+Sophia, 3,
+Emma, 3
+Olivia, 3
+Isabella, 3
+Ava, 4
+Mia, 5
+Emily, 2
+Abigail, 4
+Madison, 5
+Elizabeth, 1
+Charlotte, 3
+Avery, 5
+Sofia, 6
+Chloe, 5
+Ella, 4
+Harper, 7
+Amelia, 4
+Aubrey, 6
+Addison, 6
+Evelyn, 6
+Natalie, 4
+Grace, 2
+Hannah, 1
+Zoey, 6
+Victoria, 3
+Lillian, 5
+Lily, 4
+Brooklyn, 7
+Samantha, 4
+Layla, 7
+Zoe, 3
+Audrey, 4
+Leah, 6
+Allison, 3
+Anna, 2
+Aaliyah, 6
+Savannah, 5
+Gabriella, 5
+Camila, 7
+Aria, 8
+Kaylee, 6
+Scarlett, 7
+Hailey, 6
+Arianna, 5
+Riley, 7
+Alexis, 6
+Nevaeh, 9
+Sarah, 1
+Claire, 2
+Sadie, 4
+Peyton, 7
+Aubree, 7
+Serenity, 9
+Ariana, 5
+Genesis, 9
+Penelope, 6
+Alyssa, 6
+Bella, 4
+Taylor, 5
+Alexa, 6
+Kylie, 7
+Mackenzie, 6
+Caroline, 3
+Kennedy, 8
+Autumn, 8
+Lucy, 2
+Ashley, 2
+Madelyn, 7
+Violet, 5
+Stella, 6
+Brianna, 6
+Maya, 4
+Skylar, 7
+Ellie, 6
+Julia, 3
+Sophie, 4
+Katherine, 2
+Mila, 7
+Khloe, 7
+Paisley, 8
+Annabelle, 5
+Alexandra, 4
+Nora, 4
+Melanie, 4
+London, 6
+Gianna, 6
+Naomi, 7
+Eva, 3
+Faith, 4
+Madeline, 3
+Lauren, 2
+Nicole, 3
+Ruby, 5
+Makayla, 7
+Kayla, 6
+Lydia, 5
+Piper, 7
+Sydney, 5
+Jocelyn, 6
+Morgan, 6
+Kimberly, 6
+Molly, 4
+Jasmine, 6
+Reagan, 8
+Bailey, 7
+Eleanor, 4
+Alice, 3
+Trinity, 5
+Rylee, 7
+Andrea, 5
+Hadley, 7
+Maria, 4
+Brooke, 6
+Mariah, 5
+Isabelle, 3
+Brielle, 6
+May, 6
+Quinn, 8
+Vivian, 6
+Natalia, 6
+Mary, 1
+Liliana, 5
+Payton, 6
+Lilly, 6
+Eliana, 6
+Jade, 7
+Cora, 7
+Paige, 6
+Valentina, 7
+Kendall, 7
+Clara, 4
+Elena, 4
+Jordyn, 5
+Kaitlyn, 4
+Delilah, 6
+Isabel, 4
+Destiny, 6
+Rachel, 3
+Amy, 2
+Mckenzie, 6
+Gabrielle, 5
+Brooklynn, 7
+Katelyn, 5
+Laila, 6
+Aurora, 6
+Ariel, 6
+Angelina, 5
+Aliyah, 6
+Juliana, 6
+Vanessa, 5
+Adriana, 5
+Ivy, 6
+Lyla, 6
+Sara, 4
+Willow, 7
+Reese, 7
+Hazel, 7
+Eden, 9
+Elise, 5
+Josephine, 5
+Kinsley, 8
+Ximena, 10
+Jessica, 3
+Londyn, 7
+Makenzie, 6
+Gracie, 5
+Isla, 7
+Michelle, 2
+Valerie, 4
+Kylee, 6
+Melody, 7
+Catherine, 3
+Adalynn, 7
+Jayla, 7
+Alexia, 6
+Valeria, 5
+Adalyn, 7
+Rebecca, 3
+Izabella, 4
+Alaina, 7
+Margaret, 2
+Alana, 5
+Alivia, 7
+Kate, 2
+Luna, 7
+Norah, 5
+Kendra, 6
+Summer, 7
+Ryleigh, 7
+Julianna, 6
+Jennifer, 2
+Lila, 6
+Hayden, 7
+Emery, 7
+Stephanie, 3
+Angela, 4
+Fiona, 6
+Daisy, 7
+Presley, 9
+Eliza, 4
