@@ -34,8 +34,8 @@ public class Main extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("new")){
-	    EnterNewName e = new EnterNewName();
-	    e.setVisible(true);
+	    EnterNewName n = new EnterNewName();
+	    n.setVisible(true);
 	}
 //	if (action.equals("generate");
     }
