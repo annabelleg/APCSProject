@@ -31,6 +31,7 @@ APCSProject
   - Mapped out the project GUI on paper
   - started csv's of names
   - added value for "unusualness" of a name
+ 
 ###### 1/8/15
   - Worked on the GUI
   
