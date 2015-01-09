@@ -33,5 +33,7 @@ APCSProject
   - added value for "unusualness" of a name
  
 ###### 1/8/15
-  - Worked on the GUI: added intro, buttons, and started new gui window for one button
+  - Worked on the GUI:
+  -- created intro window, made buttons to bring you to the 2 options
+  -- made basic windows for Entering a name and Generating a name
   
