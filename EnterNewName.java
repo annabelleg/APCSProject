@@ -1,7 +1,7 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
-public class Main extends JFrame implements ActionListener{
+public class EnterNewName extends JFrame implements ActionListener{
     private Container pane;
 
   public EnterNewName(){
@@ -24,7 +24,7 @@ public class Main extends JFrame implements ActionListener{
 	
     }
     public static void main(String[]args){
-	Main g = new Main();
+	EnterNewName g = new EnterNewName();
 	g.setVisible(true);
     }
 }
