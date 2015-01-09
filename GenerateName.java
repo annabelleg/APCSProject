@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
+    private JTextArea text;
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -13,9 +14,10 @@ public class GenerateName extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
 
-	pane.add(new Label("Let's find you a name!"));
-	pane.add(new Label("Just answer all the questions below"));
-	pane.add(new Label("and we will give you your top 3 matches."));
+	text = new JTextArea("Let's find you a name!\nJust answer all the questions below\nand we will give you your top 3 matches.");
+	text.setEditable(false);
+	pane.add(text);
+
 	//	pane.add(new JTextField(12));
 	//	pane.add(new JButton(""));
 	
