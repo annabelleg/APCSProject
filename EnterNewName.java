@@ -4,7 +4,7 @@ import java.awt.*;
 public class EnterNewName extends JFrame implements ActionListener{
     private Container pane;
 
-  public EnterNewName(){
+    public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
 	this.setSize(500,500);
 	this.setLocation(200,100);
@@ -16,12 +16,13 @@ public class EnterNewName extends JFrame implements ActionListener{
 	pane.add(new Label("Here you can a new name to our curremt list"));
 	pane.add(new Label("This name can then be accesed by other users"));
 	pane.add(new Label("And can widen the variety of our name generator"));
-  pane.add(new JTextField(12));
-  pane.add(new JButton("Add Name!"));
-
-
+	pane.add(new JTextField(12));
+	pane.add(new JButton("Add Name!"));
 	
     }
+    public void actionPerformed(ActionEvent e){
+	String action = e.getActionCommand();
+    }  
     public static void main(String[]args){
 	EnterNewName g = new EnterNewName();
 	g.setVisible(true);
