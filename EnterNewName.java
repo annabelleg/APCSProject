@@ -20,7 +20,6 @@ public class EnterNewName extends JFrame implements ActionListener{
   pane.add(new JButton("Add Name!"));
 
 
-	entername = new JButton("Enter a new name");
 	
     }
     public static void main(String[]args){
