@@ -38,3 +38,8 @@ APCSProject
     - made basic windows for Entering a name and Generating a name
   - so far, we have the very basic GUI stuff, and preliminary data in the csv files. We're going to add all our criteria to the csv's, finish all the GUI stuff, and learn how to get data from and add data to the csv's
   
+
+###### 1/9/15
+- updated GUIs:
+  - turned our previous labels into uneditable textareas
+  - added stuff to EnterName GUI to input criteria along with the name (male/female, unusualness, etc)
