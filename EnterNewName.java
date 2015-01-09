@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 public class EnterNewName extends JFrame implements ActionListener{
     private Container pane;
+    private JTextArea text;
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -13,9 +14,10 @@ public class EnterNewName extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
 
-	pane.add(new Label("Here you can a new name to our curremt list"));
-	pane.add(new Label("This name can then be accesed by other users"));
-	pane.add(new Label("And can widen the variety of our name generator"));
+	text = new JTextArea("Here you can a new name to our current list!\n This can help widen the variety of our name generator.");
+	text.setEditable(false);
+
+	pane.add(text);
 	pane.add(new JTextField(12));
 	pane.add(new JButton("Add Name!"));
 	
