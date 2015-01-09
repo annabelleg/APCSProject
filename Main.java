@@ -36,8 +36,13 @@ public class Main extends JFrame implements ActionListener{
 	if (action.equals("new")){
 	    EnterNewName n = new EnterNewName();
 	    n.setVisible(true);
+	    this.dispose();
 	}
-//	if (action.equals("generate");
+	if (action.equals("generate")){
+	    GenerateName n = new GenerateName();
+	    n.setVisible(true);
+	    this.dispose();
+	}
     }
 
     public static void main(String[]args){
