@@ -34,6 +34,6 @@ APCSProject
  
 ###### 1/8/15
   - Worked on the GUI:
-  - - created intro window, made buttons to bring you to the 2 options
-  - - made basic windows for Entering a name and Generating a name
+    - created intro window, made buttons to bring you to the 2 options
+    - made basic windows for Entering a name and Generating a name
   
