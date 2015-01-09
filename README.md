@@ -43,3 +43,4 @@ APCSProject
 - updated GUIs:
   - turned our previous labels into uneditable textareas
   - added stuff to EnterName GUI to input criteria along with the name (male/female, unusualness, etc)
+- added txt file of names in the Bible so we can see if name is in there
