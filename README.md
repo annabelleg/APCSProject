@@ -36,4 +36,5 @@ APCSProject
   - Worked on the GUI:
     - created intro window, made buttons to bring you to the 2 options
     - made basic windows for Entering a name and Generating a name
+  - so far, we have the very basic GUI stuff, and preliminary data in the csv files. We're going to add all our criteria to the csv's, finish all the GUI stuff, and learn how to get data from and add data to the csv's
   
