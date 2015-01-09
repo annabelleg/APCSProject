@@ -4,6 +4,7 @@ import java.awt.*; //needed for pane
 public class Main extends JFrame implements ActionListener{
     private Container pane, introstuff;
     private JButton entername, generatename;
+    private JTextArea text;
 
     public Main(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -14,11 +15,15 @@ public class Main extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());//set this based on what will be good
 
-	pane.add(new Label("Welcome to our name generator."));
+	text = new JTextArea("Welcome to our name generator! \n You can either enter a name into our system \nor have a name generated for you \nbased on some questions we ask you.\n Which would you like to do?");
+	text.setEditable(false);
+	/*	pane.add(new Label("Welcome to our name generator."));
 	pane.add(new Label("You can either enter a name into our system,"));
 	pane.add(new Label(" or have a name generated for you based on some questions we ask you."));
 	pane.add(new Label("Which of these two options would you like to do?"));
-
+	*/
+	
+	pane.add(text);
 	entername = new JButton("Enter a new name");
 	generatename = new JButton("Give me a name!");
 
