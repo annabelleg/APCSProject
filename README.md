@@ -44,3 +44,10 @@ APCSProject
   - turned our previous labels into uneditable textareas
   - added stuff to EnterName GUI to input criteria along with the name (male/female, unusualness, etc)
 - added txt file of names in the Bible so we can see if name is in there
+
+###### 1/12/15
+- Aaron exhibited mastery of GUI-foo
+- A.K.A. we fixed all the stuff with the radio buttons in the EnterName GUI
+- we added all the buttons and such to GenerateName GUI
+- started the code to get values from the user inputs and match them to a name in the csv (GetName.java)
+- woohoo
