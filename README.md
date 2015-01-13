@@ -55,3 +55,12 @@ APCSProject
   - added buttonVal() method to get the chosen text from a ButtonGroup
   - updated actionPerformed to create a new Person with the requested values when "Give me a name!" button is pressed (NOTE: this doesn't work quite yet)
   - reorganized some things so that they're private variables instead of local ones so we can use them later
+
+####THINGS WE HAVE YET TO DO/FIX:
+- input all the values for the csv's of names
+- write the code to add a name and its values to the csv (EnterName.java)
+- finish writing the code to find the perfect match based on what you want (devise a mathematical somethin!)
+- finish all the GUI stuff:
+  - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
+  - make it look pretty
+- find the names of our future children
