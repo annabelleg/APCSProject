@@ -24,11 +24,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	text.setEditable(false);
 	pane.add(text);
 
-	/*	name = new JTextField(30);
-		pane.add(name);*/
-       	
         
-
 		
 	JRadioButton BoyButton = new JRadioButton("Boy");
 	BoyButton.setSelected(true);
