@@ -48,6 +48,10 @@ APCSProject
 ###### 1/12/15
 - Aaron exhibited mastery of GUI-foo
 - A.K.A. we fixed all the stuff with the radio buttons in the EnterName GUI
-- we added all the buttons and such to GenerateName GUI
-- started the code to get values from the user inputs and match them to a name in the csv (GetName.java)
-- woohoo
+- started the code to get values from the user inputs and match them to a name in the csv (GetName.java) <-- (later on we basically put all this in the GenerateName code so it is kind of pointless but we'll keep it around for now just in case)
+- created a Person class that contains an ArrayList of Objects that we will store our values in. We'll use this to compare what the user wants in a name to the actual values contained in the csv files.
+- IN GenerateName.java:
+  - we added all the buttons and such
+  - added buttonVal() method to get the chosen text from a ButtonGroup
+  - updated actionPerformed to create a new Person when "Give me a name!" button is pressed (NOTE: this doesn't work quite yet)
+  - reorganized some things so that they're private variables instead of local ones so we can use them later
