@@ -7,6 +7,7 @@ public class Person{
     public Person(String name, String unusual){
 	values.set(0, name);
 	values.set(1, unusual);
+
     }
     //the goal of this method is to take the given values from GenerateName.java and run it through the database of names, comparing the values and returning the closest match
     public static ArrayList<Object> comparePeople(Person p){
