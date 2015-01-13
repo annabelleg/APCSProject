@@ -16,9 +16,9 @@ public class GetName{
 	    csv = "girls.csv";
 	}
 	return csv;
-  }
+    }
 
     public static void main(String[]args) throws IOException{
 	
     }
-} //we need to put something from the CSV into the GUI
+}
