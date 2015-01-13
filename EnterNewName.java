@@ -1,9 +1,14 @@
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
+
 public class EnterNewName extends JFrame implements ActionListener{
     private Container pane;
     private JTextArea text, text2, text3, text4;
+    private JButton add;
+    private JTextField name;
+    private ButtonGroup gender, unusual;
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -16,20 +21,22 @@ public class EnterNewName extends JFrame implements ActionListener{
 
 	text = new JTextArea("Here you can a new name to our current list!\n This can help widen the variety of our name generator.");
 	text.setEditable(false);
-
 	pane.add(text);
-	pane.add(new JTextField(12));
+
+	name = new JTextField(12);
+	pane.add(name);
 
 
 	
 	
 	JRadioButton BoyButton = new JRadioButton("Boy");
+	BoyButton.setSelected(true);
 	JRadioButton GirlButton = new JRadioButton("Girl");
 	JRadioButton BothButton = new JRadioButton("Both");
-	ButtonGroup group = new ButtonGroup();
-	group.add(BoyButton);
-	group.add(GirlButton);
-	group.add(BothButton);
+	gender = new ButtonGroup();
+	gender.add(BoyButton);
+	gender.add(GirlButton);
+	gender.add(BothButton);
 	JPanel radioPanel = new JPanel(new GridLayout(1, 0));
         radioPanel.add(BoyButton);
         radioPanel.add(GirlButton);
@@ -40,22 +47,23 @@ public class EnterNewName extends JFrame implements ActionListener{
 	JRadioButton Button3 = new JRadioButton("3");
 	JRadioButton Button4 = new JRadioButton("4");
 	JRadioButton Button5 = new JRadioButton("5");
+	Button5.setSelected(true);
 	JRadioButton Button6 = new JRadioButton("6");
 	JRadioButton Button7 = new JRadioButton("7");
 	JRadioButton Button8 = new JRadioButton("8");
 	JRadioButton Button9 = new JRadioButton("9");
 	JRadioButton Button10 = new JRadioButton("10");
-	ButtonGroup group2 = new ButtonGroup();
-	group2.add(Button1);
-	group2.add(Button2);
-	group2.add(Button3);
-	group2.add(Button4);
-	group2.add(Button5);
-	group2.add(Button6);
-	group2.add(Button7);
-	group2.add(Button8);
-	group2.add(Button9);
-	group2.add(Button10);
+	unusual = new ButtonGroup();
+	unusual.add(Button1);
+	unusual.add(Button2);
+	unusual.add(Button3);
+	unusual.add(Button4);
+	unusual.add(Button5);
+	unusual.add(Button6);
+	unusual.add(Button7);
+	unusual.add(Button8);
+	unusual.add(Button9);
+	unusual.add(Button10);
 	JPanel radioPanel2 = new JPanel(new GridLayout(1, 0));
         radioPanel2.add(Button1);
         radioPanel2.add(Button2);
@@ -80,12 +88,34 @@ public class EnterNewName extends JFrame implements ActionListener{
 	pane.add(text4);
 	add(radioPanel2, BorderLayout.LINE_START);
 	
-	pane.add(new JButton("Add Name!"));
+	add = new JButton("Add Name!");
+	pane.add(add);
+	add.setActionCommand("go");
+	add.addActionListener(this);
 	
+    }
+    public Person collectData(){
+	Person p = new Person(name.getText(), buttonVal(unusual));
+	String csv = "";
+	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
+	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
+	if (buttonVal(gender).equals("Both")) csv = "both";
     }
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
+	if (action.equals("go")){
+	    
+	}
     }  
+    public String buttonVal(ButtonGroup b){
+	for (Enumeration<AbstractButton> buttons = b.getElements(); buttons.hasMoreElements();){
+	    AbstractButton button = buttons.nextElement();
+	    if (button.isSelected()){
+		return button.getText();
+	    }
+	}
+	return null;
+    }
     public static void main(String[]args){
 	EnterNewName g = new EnterNewName();
 	g.setVisible(true);
