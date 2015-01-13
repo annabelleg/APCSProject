@@ -53,5 +53,5 @@ APCSProject
 - IN GenerateName.java:
   - we added all the buttons and such
   - added buttonVal() method to get the chosen text from a ButtonGroup
-  - updated actionPerformed to create a new Person when "Give me a name!" button is pressed (NOTE: this doesn't work quite yet)
+  - updated actionPerformed to create a new Person with the requested values when "Give me a name!" button is pressed (NOTE: this doesn't work quite yet)
   - reorganized some things so that they're private variables instead of local ones so we can use them later
