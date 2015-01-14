@@ -61,6 +61,10 @@ APCSProject
 - cleaned up EnterNewName by making different JComponents private variables instead of local, added buttonVal() code, started rudimentary creation of a Person given the user inputs
 - it looks like we weren't super productive today but we really were I promise!!
 
+###### 1/14/15
+- continued adding values to the CSV's
+ 
+
 ####THINGS WE HAVE YET TO DO/FIX:
 - input all the values for the csv's of names
 - write the code to add a name and its values to the csv (EnterName.java)
