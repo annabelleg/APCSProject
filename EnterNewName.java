@@ -160,7 +160,7 @@ public class EnterNewName extends JFrame implements ActionListener{
 	String content = p.qualities();
 	if (csv.equals("boys.csv") || csv.equals("girls.csv")){
 	    FileWriter w = new FileWriter(csv, true);
-	    w.write(content + "\n");
+	    w.write(content);
 	    w.close();
 	} else {
 	    AddName(p,"boys.csv");
