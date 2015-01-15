@@ -65,13 +65,14 @@ APCSProject
 - continued adding values to the CSV's
 - created Finished.java, which is the window that pops up when you click the Submit buttons in EnterNewName and GenerateName and asks you what you want to do next
 - wrote methods that collect the user-inputted data and adds it to the correct csv for EnterNewName <--not positive if this works yet so will be testing shortly
+- UPDATE: IT WORKS PRAISE THE LORD GLORY HALLELUJAH
 - added Old-Fashioned buttons to GenerateName
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
 - input all the values for the csv's of names
 - write the code to add a name and its values to the csv (EnterName.java)
-  - we have code to put the values into a Person but we need to add the Person to the csv 
+  - we have code to put the values into a Person but we need to add the Person to the csv <--THIS IS DONE MUAHAHAAHAA
 - finish writing the code to find the perfect match based on what you want (devise a mathematical somethin!)
 - finish all the GUI stuff:
   - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
