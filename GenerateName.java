@@ -144,14 +144,13 @@ public class GenerateName extends JFrame implements ActionListener{
     }
 
     public void collectData(){
-	String[] values = new String[3];
-	values[0] = buttonVal(unusual);
-	values[1] = buttonVal(oldfashioned);
+	ArrayList<Integer> values = new ArrayList<Integer>();
+	values.add(buttonVal(unusual));
+	values.add(buttonVal(oldfashioned));
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
 	if (buttonVal(gender).equals("Both")) csv = "both";
-	values[2] = csv;
     }
 
     public void actionPerformed(ActionEvent e){
@@ -165,4 +164,20 @@ public class GenerateName extends JFrame implements ActionListener{
 	GenerateName g = new GenerateName();
 	g.setVisible(true);
     }
+
+
+
+    /*  public static int calculate(ArrayList<Integer> array1, ArrayList<Integer> array2) {
+	int dif = 0;
+	for (int i=0; i<array1.size(); i++) { 
+	    dif += Math.abs(array1.get(i) - array2.get(i));
+	    //System.out.println(array1.get(i) + " * " + array2.get(i) + "\n" + dif); 
+	}
+	return 100-dif;
+	}*/
+
+
+
+
+
 }
