@@ -145,8 +145,8 @@ public class GenerateName extends JFrame implements ActionListener{
 
     public void collectData(){
 	ArrayList<Integer> values = new ArrayList<Integer>();
-	values.add(buttonVal(unusual));
-	values.add(buttonVal(oldfashioned));
+	values.add(Integer.parseInt(buttonVal(unusual)));
+	values.add(Integer.parseInt(buttonVal(oldfashioned)));
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
@@ -176,7 +176,29 @@ public class GenerateName extends JFrame implements ActionListener{
 	return 100-dif;
 	}*/
 
+    public ArrayList<String[]> loadAllNames(String file){
+	String s = "Hi Mr. K!";
+	ArrayList<String[]> dictionary = new ArrayList<String[]>();
+     
+	try {
+	    FileReader f = new FileReader(file);
+	    BufferedReader b = new BufferedReader(f);
+ 
+	    while( s != null ) {
+		s = b.readLine();
+		if ( s != null )
+		    dictionary.add(s.split(", "));
+            }
+	    
+        }
+	catch (IOException e) {}
+   
 
+	return dictionary;
+    }
+
+
+    }
 
 
 
