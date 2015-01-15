@@ -69,7 +69,7 @@ APCSProject
 - added Old-Fashioned buttons, method to collect the user inputs, and rudimentary calaculation method to GenerateName
 
 ###### 1/15/15
-- Created a function to determine which names are closest to the requested traits
+- added method to load the values from the csv into an ArrayList of String arrays
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
