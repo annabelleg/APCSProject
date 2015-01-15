@@ -73,8 +73,9 @@ APCSProject
 - input all the values for the csv's of names
 - write the code to add a name and its values to the csv (EnterName.java)
   - we have code to put the values into a Person but we need to add the Person to the csv <--*THIS IS DONE MUAHAHAAHAA*
+- add method to tell you if the name you want to enter is already in the system 
 - finish writing the code to find the perfect match based on what you want (devise a mathematical somethin!)
 - finish all the GUI stuff:
   - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
   - make it look pretty
-- find the names of our future children
+- find the names of our future children that we are having together
