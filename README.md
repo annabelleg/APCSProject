@@ -67,7 +67,7 @@ APCSProject
 - wrote methods that collect the user-inputted data and adds it to the correct csv for EnterNewName <--not positive if this works yet so will be testing shortly
 - UPDATE: IT WORKS PRAISE THE LORD GLORY HALLELUJAH
 - added Old-Fashioned buttons, method to collect the user inputs, and rudimentary calaculation method to GenerateName
-- 
+
 ###### 1/15/15
 - Created a function to determine which names are closest to the requested traits
  
