@@ -2,17 +2,22 @@ import java.io.*;
 import java.util.*;
 
 public class Person{
-    private ArrayList<Object> values;
+    private String[] values;
 
-    public Person(String name, String unusual){
-	values.set(0, name);
-	values.set(1, unusual);
+    public Person(String name, String unusual, String oldfashioned){
+	values = new String[3];
+	values[0] = name;
+	values[1] = unusual;
+	values[2] = oldfashioned;
 
     }
-    //the goal of this method is to take the given values from GenerateName.java and run it through the database of names, comparing the values and returning the closest match
-    public static ArrayList<Object> comparePeople(Person p){
-	ArrayList<Object> a = new ArrayList<Object>(1);
-	return a;
+ 
+    public String qualities() {
+	String c = "";
+	for (int i = 0; i<values.length; i++) {
+	    c += values[i] +", ";
+	}
+	return c.substring(0, c.length()-2);
     }
-//NOTE: THIS COMPARE METHOD SHOULD DEFINITELY GO ELSEWHERE I'M JUST PUTTING IT HERE FOR NOW
+
 }
