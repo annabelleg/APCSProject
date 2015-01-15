@@ -107,7 +107,7 @@ public class GenerateName extends JFrame implements ActionListener{
         radioPanel3.add(B9);
         radioPanel3.add(B10);
 
-	text2 = new JTextArea("Is it a boy's name, a girl's name, or both.");
+	text2 = new JTextArea("Is it a boy's name, a girl's name, or can it be both?");
 	text2.setEditable(false);
 	pane.add(text2);
 	add(radioPanel, BorderLayout.LINE_START);
@@ -132,6 +132,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	enter.setActionCommand("go");
 	enter.addActionListener(this);
     }
+
     public String buttonVal(ButtonGroup b){
 	for (Enumeration<AbstractButton> buttons = b.getElements(); buttons.hasMoreElements();){
 	    AbstractButton button = buttons.nextElement();
@@ -141,12 +142,25 @@ public class GenerateName extends JFrame implements ActionListener{
 	}
 	return null;
     }
+
+    public void collectData(){
+	String[] values = new String[3];
+	values[0] = buttonVal(unusual);
+	values[1] = buttonVal(oldfashioned);
+	String csv = "";
+	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
+	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
+	if (buttonVal(gender).equals("Both")) csv = "both";
+	values[2] = csv;
+    }
+
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("go")){
 	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned));
 	}
     }  
+
     public static void main(String[]args){
 	GenerateName g = new GenerateName();
 	g.setVisible(true);
