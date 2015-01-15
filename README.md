@@ -63,6 +63,9 @@ APCSProject
 
 ###### 1/14/15
 - continued adding values to the CSV's
+- created Finished.java, which is the window that pops up when you click the Submit buttons in EnterNewName and GenerateName and asks you what you want to do next
+- wrote methods that collect the user-inputted data and adds it to the correct csv for EnterNewName <--not positive if this works yet so will be testing shortly
+- added Old-Fashioned buttons to GenerateName
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
