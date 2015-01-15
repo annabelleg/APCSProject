@@ -5,11 +5,10 @@ import java.util.*;
 
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
-    private JTextArea text, text2, text3, text4;
-    // private JTextField name;
-    //   private String 
+    private JTextArea text, text2, text3, text4, text5, text6;
     private JButton enter;
-    private ButtonGroup unusual;
+    private JTextField name;
+    private ButtonGroup gender, unusual, oldfashioned;
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -73,17 +72,59 @@ public class GenerateName extends JFrame implements ActionListener{
         radioPanel2.add(Button9);
         radioPanel2.add(Button10);
 
-	text2 = new JTextArea("Do you want a boy's name, a girl's name, or one that works for either?");
+
+	JRadioButton B1 = new JRadioButton("1");
+	JRadioButton B2 = new JRadioButton("2");
+	JRadioButton B3 = new JRadioButton("3");
+	JRadioButton B4 = new JRadioButton("4");
+	JRadioButton B5 = new JRadioButton("5");
+	B5.setSelected(true);
+	JRadioButton B6 = new JRadioButton("6");
+	JRadioButton B7 = new JRadioButton("7");
+	JRadioButton B8 = new JRadioButton("8");
+	JRadioButton B9 = new JRadioButton("9");
+	JRadioButton B10 = new JRadioButton("10");
+	oldfashioned = new ButtonGroup();
+	oldfashioned.add(B1);
+	oldfashioned.add(B2);
+	oldfashioned.add(B3);
+	oldfashioned.add(B4);
+	oldfashioned.add(B5);
+	oldfashioned.add(B6);
+	oldfashioned.add(B7);
+	oldfashioned.add(B8);
+	oldfashioned.add(B9);
+	oldfashioned.add(B10);
+	JPanel radioPanel3 = new JPanel(new GridLayout(1, 0));
+        radioPanel3.add(B1);
+        radioPanel3.add(B2);
+        radioPanel3.add(B3);
+        radioPanel3.add(B4);
+        radioPanel3.add(B5);
+        radioPanel3.add(B6);
+        radioPanel3.add(B7);
+        radioPanel3.add(B8);
+        radioPanel3.add(B9);
+        radioPanel3.add(B10);
+
+	text2 = new JTextArea("Is it a boy's name, a girl's name, or both.");
 	text2.setEditable(false);
 	pane.add(text2);
 	add(radioPanel, BorderLayout.LINE_START);
-	text3 = new JTextArea("Choose how unusual the name you want is from 1 to 10");
+	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual");
 	text3.setEditable(false);
 	pane.add(text3);
-	text4 = new JTextArea("Ex. Mary and John would be rated a 1, Ximena and Ryker would be rated a 10");
+	text4 = new JTextArea("Ex. Mary would be rated a 1, Ximena would be rated a 10");
 	text4.setEditable(false);
 	pane.add(text4);
 	add(radioPanel2, BorderLayout.LINE_START);
+	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned");
+	text5.setEditable(false);
+	pane.add(text5);
+	text6 = new JTextArea("Ex. Mary would be rated a 10, Ximena would be rated a 1");
+	text6.setEditable(false);
+	pane.add(text6);
+	add(radioPanel3, BorderLayout.LINE_START);
 	
 
 	enter = new JButton("Give me a name!");
@@ -103,8 +144,7 @@ public class GenerateName extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("go")){
-	    Person p = new Person("", buttonVal(unusual));
-	    Person.comparePeople(p);
+	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned));
 	}
     }  
     public static void main(String[]args){
