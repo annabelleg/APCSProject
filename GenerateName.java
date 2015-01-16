@@ -207,17 +207,29 @@ public class GenerateName extends JFrame implements ActionListener{
 	return names;
     }
     
-    public static ArrayList<ArrayList<Integer>> attributeAL(String file) {
+    public static ArrayList<ArrayList<Object>> attributeAL(String file) {
 	ArrayList<String[]> dic = loadAllNames(file);
     	ArrayList<ArrayList<Integer>> att = new ArrayList<ArrayList<Integer>>();
     	for (int i = 0; i< dic.size(); i++) { //go thru arraylist of string arrays
-	    ArrayList<Integer>  blah = new ArrayList<Integer>(); //temp array
+	    ArrayList<Object>  blah = new ArrayList<Object>(); //temp array
 	    for (int j = 1; j<dic.get(i).length; j++) { //go thru each string array 
-		blah.add(Integer.parseInt(dic.get(i)[j]));
+		if (tryParse(dic.get(i)[j]) != null){
+		    blah.add(Integer.parseInt(dic.get(i)[j]));
+		}else{
+		    blah.add(dic.get(i)[j]));
 	    }
+	
 	    att.add(blah);
 	}
 	return att;
     }
 
+    public static Integer tryParse(String text) {
+	try {
+	    return new Integer(text);
+	} catch (NumberFormatException e) {
+	    return null;
+	}
+    }
+    
 }
