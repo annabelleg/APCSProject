@@ -9,6 +9,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     private JTextArea text, text2, text3, text4, text5, text6;
     private JButton add;
     private JTextField name;
+    private JComboBox CountryList;
     private ButtonGroup gender, unusual, oldfashioned;
 
     public EnterNewName(){
@@ -129,6 +130,13 @@ public class EnterNewName extends JFrame implements ActionListener{
 	text6.setEditable(false);
 	pane.add(text6);
 	add(radioPanel3, BorderLayout.LINE_START);
+
+	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
+
+	JComboBox CountryList = new JComboBox(CountryStrings);
+	CountryList.setSelectedIndex(0);
+	CountryList.addActionListener(this);
+	pane.add(CountryList);
 	
 	add = new JButton("Add Name!");
 	pane.add(add);
@@ -148,7 +156,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
 
     public void collectData() throws IOException{
-	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned));
+	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), CountryList.getSelectedItem());
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
