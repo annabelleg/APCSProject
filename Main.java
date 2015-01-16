@@ -32,7 +32,7 @@ public class Main extends JFrame implements ActionListener{
 	generatename.setActionCommand("generate");
 	generatename.addActionListener(this);
 
-	pane.add(entername);
+	pane.add(entername); 
 	pane.add(generatename);
     }
 
