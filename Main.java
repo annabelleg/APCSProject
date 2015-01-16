@@ -2,20 +2,20 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*; //needed for pane
 public class Main extends JFrame implements ActionListener{
-    private Container pane, introstuff;
+    private Container main,pane,pane2, pane3, introstuff;
     private JButton entername, generatename;
     private JTextArea text;
 
     public Main(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(500,500);
+	this.setSize(440,250);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new FlowLayout());//set this based on what will be good
+	pane.setLayout(new GridLayout(3,1));//set this based on what will be good
 
-	text = new JTextArea("Welcome to our name generator! \n You can either enter a name into our system \nor have a name generated for you \nbased on some questions we ask you.\n Which would you like to do?");
+	text = new JTextArea("Welcome to our name generator! You can either enter a name into our system \nor have a name generated for you based on some questions we ask you.\n Which would you like to do?");
 	text.setEditable(false);
 	/*	pane.add(new Label("Welcome to our name generator."));
 	pane.add(new Label("You can either enter a name into our system,"));
@@ -35,6 +35,7 @@ public class Main extends JFrame implements ActionListener{
 	pane.add(entername);
 	pane.add(generatename);
     }
+
 
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
