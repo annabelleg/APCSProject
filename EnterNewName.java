@@ -6,7 +6,7 @@ import java.io.*;
 
 public class EnterNewName extends JFrame implements ActionListener{
     private Container pane;
-    private JTextArea text, text2, text3, text4, text5, text6;
+    private JTextArea text, text2, text3, text4, text5, text6, text7;
     private JButton add;
     private JTextField name;
     private JComboBox CountryList;
@@ -130,12 +130,14 @@ public class EnterNewName extends JFrame implements ActionListener{
 	text6.setEditable(false);
 	pane.add(text6);
 	add(radioPanel3, BorderLayout.LINE_START);
+	text7 = new JTextArea("What is the name's origin?");
+	text7.setEditable(false);
+	pane.add(text7);
 
 	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
 
 	JComboBox CountryList = new JComboBox(CountryStrings);
 	CountryList.setSelectedIndex(0);
-	CountryList.addActionListener(this);
 	pane.add(CountryList);
 	
 	add = new JButton("Add Name!");
