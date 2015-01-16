@@ -197,9 +197,4 @@ public class GenerateName extends JFrame implements ActionListener{
 	return dictionary;
     }
 
-
-    }
-
-
-
 }
