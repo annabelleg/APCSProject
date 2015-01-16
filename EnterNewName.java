@@ -156,7 +156,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
 
     public void collectData() throws IOException{
-	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), CountryList.getSelectedItem());
+	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), (String)CountryList.getSelectedItem());
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
