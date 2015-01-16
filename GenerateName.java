@@ -2,6 +2,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
+import java.io.*;
 
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
