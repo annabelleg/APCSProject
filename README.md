@@ -75,6 +75,7 @@ APCSProject
 
 ###### 1/16/15
 - added more code to GenerateName to help load all the names into ArrayLists and such
+- added the dropdown menu to EnterNewName
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
