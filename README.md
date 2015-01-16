@@ -70,6 +70,10 @@ APCSProject
 
 ###### 1/15/15
 - added method to load the values from the csv into an ArrayList of String arrays
+- Changed the GUI layout of Main.java to be prettier
+- Finished old-fashioned for the girl CSV
+
+###### 1/16/15
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
