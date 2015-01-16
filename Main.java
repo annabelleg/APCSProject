@@ -17,11 +17,7 @@ public class Main extends JFrame implements ActionListener{
 
 	text = new JTextArea("Welcome to our name generator! You can either enter a name into our system \nor have a name generated for you based on some questions we ask you.\n Which would you like to do?");
 	text.setEditable(false);
-	/*	pane.add(new Label("Welcome to our name generator."));
-	pane.add(new Label("You can either enter a name into our system,"));
-	pane.add(new Label(" or have a name generated for you based on some questions we ask you."));
-	pane.add(new Label("Which of these two options would you like to do?"));
-	*/
+
 	
 	pane.add(text);
 	entername = new JButton("Enter a new name");
