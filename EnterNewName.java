@@ -137,7 +137,7 @@ public class EnterNewName extends JFrame implements ActionListener{
 	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
 
 	JComboBox CountryList = new JComboBox(CountryStrings);
-	CountryList.setSelectedIndex(0);
+	CountryList.setSelectedIndex(1);
 	pane.add(CountryList);
 	
 	add = new JButton("Add Name!");
