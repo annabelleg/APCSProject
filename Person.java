@@ -4,12 +4,12 @@ import java.util.*;
 public class Person{
     ArrayList<String> values;
 
-    public Person(String name, String unusual, String oldfashioned, String Country){
+    public Person(String name, String unusual, String oldfashioned, String country){
 	values = new ArrayList<String>(3);
 	values.add(name);
 	values.add(unusual);
 	values.add(oldfashioned);
-	values.add(Country);
+	values.add(country);
 
     }
  
