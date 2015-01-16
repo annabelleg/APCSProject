@@ -8,7 +8,7 @@ public class Main extends JFrame implements ActionListener{
 
     public Main(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(440,250);
+	this.setSize(500,250);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
