@@ -177,7 +177,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	return 100-dif;
 	}*/
 
-    public ArrayList<String[]> loadAllNames(String file){
+    public static ArrayList<String[]> loadAllNames(String file){
 	String s = "Hi Mr. K!";
 	ArrayList<String[]> dictionary = new ArrayList<String[]>();
      
@@ -196,6 +196,28 @@ public class GenerateName extends JFrame implements ActionListener{
    
 
 	return dictionary;
+    }
+    
+    public static ArrayList<String> allNames(String file){
+	ArrayList<String[]> dic = loadAllNames(file);
+	ArrayList<String> names = new ArrayList<String>();
+	for (int i = 0; i<dic.size(); i++) {
+	    names.add(dic.get(i)[0]);
+	}
+	return names;
+    }
+    
+    public static ArrayList<ArrayList<Integer>> attributeAL(String file) {
+	ArrayList<String[]> dic = loadAllNames(file);
+    	ArrayList<ArrayList<Integer>> att = new ArrayList<ArrayList<Integer>>();
+    	for (int i = 0; i< dic.size(); i++) { //go thru arraylist of string arrays
+	    ArrayList<Integer>  blah = new ArrayList<Integer>(); //temp array
+	    for (int j = 1; j<dic.get(i).length; j++) { //go thru each string array 
+		blah.add(Integer.parseInt(dic.get(i)[j]));
+	    }
+	    att.add(blah);
+	}
+	return att;
     }
 
 }
