@@ -74,6 +74,7 @@ APCSProject
 - Finished old-fashioned for the girl CSV
 
 ###### 1/16/15
+- added more code to GenerateName to help load all the names into ArrayLists and such
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
