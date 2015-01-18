@@ -6,7 +6,7 @@ import java.io.*;
 
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
-    private JTextArea text, text2, text3, text4, text5, text6;
+    private JTextArea text, text2, text3, text4, text5, text6, NAME;
     private JButton enter;
     private JTextField name;
     private ButtonGroup gender, unusual, oldfashioned;
@@ -126,6 +126,10 @@ public class GenerateName extends JFrame implements ActionListener{
 	text6.setEditable(false);
 	pane.add(text6);
 	add(radioPanel3, BorderLayout.LINE_START);
+
+	NAME = new JTextArea();
+	pane.add(NAME);
+	NAME.setVisible(false);
 	
 
 	enter = new JButton("Give me a name!");
@@ -144,30 +148,22 @@ public class GenerateName extends JFrame implements ActionListener{
 	return null;
     }
 
-    public void collectData(){
-	ArrayList<Integer> values = new ArrayList<Integer>();
-	values.add(Integer.parseInt(buttonVal(unusual)));
-	values.add(Integer.parseInt(buttonVal(oldfashioned)));
+    public String getCSV(){
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
 	if (buttonVal(gender).equals("Both")) csv = "both";
+	return csv;
     }
 
-    public void actionPerformed(ActionEvent e){
-	String action = e.getActionCommand();
-	if (action.equals("go")){
-	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), "");
+    public static Integer tryParse(String text) {
+	try {
+	    return new Integer(text);
+	} catch (NumberFormatException e) {
+	    return null;
 	}
-    }  
-
-    public static void main(String[]args){
-	GenerateName g = new GenerateName();
-	g.setVisible(true);
     }
 
-
-    
     public static int calculate(ArrayList<Object> me, ArrayList<Object> you){
 	int dif = 0;
 	for (int i = 0; i < me.size(); i++){
@@ -207,11 +203,23 @@ public class GenerateName extends JFrame implements ActionListener{
     }
     
     public static ArrayList<String> allNames(String file){
-	ArrayList<String[]> dic = loadAllNames(file);
 	ArrayList<String> names = new ArrayList<String>();
-	for (int i = 0; i<dic.size(); i++) {
-	    names.add(dic.get(i)[0]);
+	if (file.equals("boys.csv") || file.equals("girls.csv")){
+	    ArrayList<String[]> dic = loadAllNames(file);
+	    for (int i = 0; i<dic.size(); i++) {
+		names.add(dic.get(i)[0]);
+	    }
+	    
+	}else{
+	    names = bothNames();
+	   
 	}
+	return names;
+    }
+    public static ArrayList<String> bothNames(){
+	ArrayList<String> names = new ArrayList<String>();
+	names = allNames("girls.csv");
+	names = allNames("boys.csv");
 	return names;
     }
     
@@ -233,15 +241,9 @@ public class GenerateName extends JFrame implements ActionListener{
 	return att;
     }
 
-    public static Integer tryParse(String text) {
-	try {
-	    return new Integer(text);
-	} catch (NumberFormatException e) {
-	    return null;
-	}
-    }
 
-    public static String findMatch(ArrayList<Object> criteria, String file)  throws IOException{
+    public static String findMatch(Person p, String file)  throws IOException{
+	ArrayList<Object> criteria = p.values;
 	ArrayList<String> names = allNames(file);
 	ArrayList<ArrayList<Object>> possibilities = attributeAll(file);
 	int champPercent = calculate(criteria, possibilities.get(0));
@@ -252,7 +254,24 @@ public class GenerateName extends JFrame implements ActionListener{
 		champIndex = i;
 	    }
 	}
-    
-	return "The name that most closely matches what you want is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return "The name that most closely matches what you wanted is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
+
+    public void actionPerformed(ActionEvent e){
+	String action = e.getActionCommand();
+	if (action.equals("go")){
+	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), "");
+	    try {
+		NAME = new JTextArea(findMatch(p, getCSV()));
+		NAME.setVisible(true);
+	    }
+	    catch (IOException x) {}
+	}
+    }  
+
+    public static void main(String[]args){
+	GenerateName g = new GenerateName();
+	g.setVisible(true);
+    }
+
 }
