@@ -6,10 +6,11 @@ import java.io.*;
 
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
-    private JTextArea text, text2, text3, text4, text5, text6, NAME;
+    private JTextArea text, text2, text3, text4, text5, text6, text7, NAME;
     private JButton enter;
     private JTextField name;
     private ButtonGroup gender, unusual, oldfashioned;
+    private JComboBox CountryList;
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -127,15 +128,24 @@ public class GenerateName extends JFrame implements ActionListener{
 	pane.add(text6);
 	add(radioPanel3, BorderLayout.LINE_START);
 
-	NAME = new JTextArea();
-	pane.add(NAME);
-	NAME.setVisible(false);
-	
 
+	text7 = new JTextArea("Choose the origin of the name you want.");
+	text7.setEditable(false);
+	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
+	CountryList = new JComboBox(CountryStrings);
+	CountryList.setSelectedIndex(1);
+	pane.add(text7);
+	pane.add(CountryList);
+	
 	enter = new JButton("Give me a name!");
 	pane.add(enter);
 	enter.setActionCommand("go");
 	enter.addActionListener(this);
+
+	NAME = new JTextArea();
+	pane.add(NAME);
+	NAME.setVisible(false);
+
     }
 
     public String buttonVal(ButtonGroup b){
@@ -226,9 +236,9 @@ public class GenerateName extends JFrame implements ActionListener{
     public static ArrayList<ArrayList<Object>> attributeAll(String file) {
 	ArrayList<String[]> dic = loadAllNames(file);
     	ArrayList<ArrayList<Object>> att = new ArrayList<ArrayList<Object>>();
-    	for (int i = 0; i< dic.size(); i++) { //go thru arraylist of string arrays
-	    ArrayList<Object>  blah = new ArrayList<Object>(); //temp array
-	    for (int j = 1; j<dic.get(i).length; j++) { //go thru each string array 
+    	for (int i = 0; i< dic.size(); i++) { 
+	    ArrayList<Object>  blah = new ArrayList<Object>(); 
+	    for (int j = 1; j<dic.get(i).length; j++) {  
 		if (tryParse(dic.get(i)[j]) != null){
 		    blah.add(Integer.parseInt(dic.get(i)[j]));
 		}else{
@@ -260,7 +270,7 @@ public class GenerateName extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("go")){
-	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), "");
+	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), (String)CountryList.getSelectedItem());
 	    try {
 		NAME = new JTextArea(findMatch(p, getCSV()));
 		NAME.setVisible(true);
