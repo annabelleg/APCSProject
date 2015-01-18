@@ -79,6 +79,8 @@ APCSProject
 
 ###### 1/17/15
 - deleted GetName.java because it was pointless
+- fixed the GenerateName code that goes through the csv and stuff
+  - added a code the find the match and return it <--haven't tested this yet but that will happen as soon as we write the code that uses the findMatch code and stuff!!
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
