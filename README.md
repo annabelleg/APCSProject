@@ -81,6 +81,9 @@ APCSProject
 - deleted GetName.java because it was pointless
 - fixed the GenerateName code that goes through the csv and stuff
   - added a code the find the match and return it <--haven't tested this yet but that will happen as soon as we write the code that uses the findMatch code and stuff!!
+  - updated the actionPerformed code so that when you click the "Get Name!" button something actually happens
+    - as of yet, that "something" is that it gives you an error, but that will be fixed soon!!
+- updated the calculate() code so that it can take both Strings and Integers so that it can take into account things like country of origin and stuff
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
@@ -91,7 +94,7 @@ APCSProject
 - finish writing the code to find the perfect match based on what you want (devise a mathematical somethin!)
   - to do this we need:
     - a way to run through the csv
-    - a way to calculate compatability for each name
+    - a way to calculate compatability for each name <-- *look at calculate() code in GenerateName.java*
     - a way to store and return the top three highest matches and some of their information
 - finish all the GUI stuff:
   - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
