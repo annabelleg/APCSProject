@@ -84,6 +84,10 @@ APCSProject
   - updated the actionPerformed code so that when you click the "Get Name!" button something actually happens
     - as of yet, that "something" is that it gives you an error, but that will be fixed soon!!
 - updated the calculate() code so that it can take both Strings and Integers so that it can take into account things like country of origin and stuff
+
+###### 1/18/15
+- added dropdown menu for language of origin to GenerateName
+  - however, we're getting the same error as we got last night: a NullPointerException that says there's no outputted value for the Gender radio buttons (i assume this extends to the other sets of radio buttons)
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
