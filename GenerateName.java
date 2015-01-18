@@ -253,6 +253,6 @@ public class GenerateName extends JFrame implements ActionListener{
 	    }
 	}
     
-	return "Your future love interest is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a partner!";
+	return "The name that most closely matches what you want is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a partner!";
     }
 }
