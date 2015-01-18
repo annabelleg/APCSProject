@@ -75,7 +75,10 @@ APCSProject
 
 ###### 1/16/15
 - added more code to GenerateName to help load all the names into ArrayLists and such
-- added the dropdown menu to EnterNewName
+- added the dropdown menu to choose country of origin to EnterNewName
+
+###### 1/17/15
+- deleted GetName.java because it was pointless
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
