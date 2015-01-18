@@ -134,7 +134,7 @@ public class EnterNewName extends JFrame implements ActionListener{
 	text7.setEditable(false);
 	pane.add(text7);
 
-	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
+	String[] CountryStrings = { "Germanic", "Latin", "Greek", "Hebrew", "Other" };
 
 	JComboBox CountryList = new JComboBox(CountryStrings);
 	CountryList.setSelectedIndex(1);
