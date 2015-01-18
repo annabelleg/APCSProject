@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Person{
-    ArrayList<String> values;
+    ArrayList<Object> values;
 
     public Person(String name, String unusual, String oldfashioned, String country){
 	values = new ArrayList<String>(3);
