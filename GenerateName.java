@@ -167,15 +167,23 @@ public class GenerateName extends JFrame implements ActionListener{
     }
 
 
-
-    /*  public static int calculate(ArrayList<Integer> array1, ArrayList<Integer> array2) {
+    
+    public static int calculate(ArrayList<Object> me, ArrayList<Object> you){
 	int dif = 0;
-	for (int i=0; i<array1.size(); i++) { 
-	    dif += Math.abs(array1.get(i) - array2.get(i));
-	    //System.out.println(array1.get(i) + " * " + array2.get(i) + "\n" + dif); 
+	for (int i = 0; i < me.size(); i++){
+	    if (me.get(i) instanceof Integer){
+		dif += Math.abs(Integer.parseInt(me.get(i).toString()) - Integer.parseInt(you.get(i).toString()));
+	    }
+	    if (me.get(i) instanceof String){
+		if (me.get(i).equals(you.get(i))){
+		    dif -= 3;
+		}else{
+		    dif += 3;
+		}
+	    }
 	}
-	return 100-dif;
-	}*/
+	return 100 - dif;
+    }
 
     public static ArrayList<String[]> loadAllNames(String file){
 	String s = "Hi Mr. K!";
@@ -232,5 +240,19 @@ public class GenerateName extends JFrame implements ActionListener{
 	    return null;
 	}
     }
+
+    public static String findMatch(ArrayList<Object> criteria, String file)  throws IOException{
+	ArrayList<String> names = allNames(file);
+	ArrayList<ArrayList<Object>> possibilities = attributeAll(file);
+	int champPercent = calculate(criteria, possibilities.get(0));
+	int champIndex = 0;
+	for (int i = 1; i< possibilities.size(); i++) {
+	    if (calculate(criteria, possibilities.get(i)) > champPercent) {
+		champPercent = calculate(criteria, possibilities.get(i));
+		champIndex = i;
+	    }
+	}
     
+	return "Your future love interest is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a partner!";
+    }
 }
