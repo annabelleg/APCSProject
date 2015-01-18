@@ -5,7 +5,7 @@ public class Person{
     ArrayList<Object> values;
 
     public Person(String name, String unusual, String oldfashioned, String country){
-	values = new ArrayList<String>(3);
+	values = new ArrayList<Object>(4);
 	values.add(name);
 	values.add(unusual);
 	values.add(oldfashioned);
