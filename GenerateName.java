@@ -131,7 +131,7 @@ public class GenerateName extends JFrame implements ActionListener{
 
 	text7 = new JTextArea("Choose the origin of the name you want.");
 	text7.setEditable(false);
-	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Other" };
+	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Greek", "Scandanavian", "Other" };
 	CountryList = new JComboBox(CountryStrings);
 	CountryList.setSelectedIndex(1);
 	pane.add(text7);
@@ -271,9 +271,9 @@ public class GenerateName extends JFrame implements ActionListener{
 	String action = e.getActionCommand();
 	if (action.equals("go")){
 	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), (String)CountryList.getSelectedItem());
-	    try {
-		NAME = new JTextArea(findMatch(p, getCSV()));
-		NAME.setVisible(true);
+	      try {
+		  NAME.setText(findMatch(p, getCSV()));
+		  NAME.setVisible(true);
 	    }
 	    catch (IOException x) {}
 	}
