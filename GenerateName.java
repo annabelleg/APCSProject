@@ -157,7 +157,7 @@ public class GenerateName extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("go")){
-	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned));
+	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), "");
 	}
     }  
 
@@ -207,19 +207,20 @@ public class GenerateName extends JFrame implements ActionListener{
 	return names;
     }
     
-    public static ArrayList<ArrayList<Object>> attributeAL(String file) {
+    public static ArrayList<ArrayList<Object>> attributeAll(String file) {
 	ArrayList<String[]> dic = loadAllNames(file);
-    	ArrayList<ArrayList<Integer>> att = new ArrayList<ArrayList<Integer>>();
+    	ArrayList<ArrayList<Object>> att = new ArrayList<ArrayList<Object>>();
     	for (int i = 0; i< dic.size(); i++) { //go thru arraylist of string arrays
 	    ArrayList<Object>  blah = new ArrayList<Object>(); //temp array
 	    for (int j = 1; j<dic.get(i).length; j++) { //go thru each string array 
 		if (tryParse(dic.get(i)[j]) != null){
 		    blah.add(Integer.parseInt(dic.get(i)[j]));
 		}else{
-		    blah.add(dic.get(i)[j]));
+		    blah.add(dic.get(i)[j]);
+		}
+		
+		att.add(blah);
 	    }
-	
-	    att.add(blah);
 	}
 	return att;
     }
