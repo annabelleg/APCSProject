@@ -131,7 +131,7 @@ public class GenerateName extends JFrame implements ActionListener{
 
 	text7 = new JTextArea("Choose the origin of the name you want.");
 	text7.setEditable(false);
-	String[] CountryStrings = { "No Country","English", "Spanish", "French", "Hebrew", "German", "Greek", "Scandanavian", "Other" };
+	String[] CountryStrings = { "Germanic", "Latin", "Hebrew", "Greek", "Other" };
 	CountryList = new JComboBox(CountryStrings);
 	CountryList.setSelectedIndex(1);
 	pane.add(text7);
