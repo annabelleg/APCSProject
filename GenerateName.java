@@ -11,7 +11,7 @@ public class GenerateName extends JFrame implements ActionListener{
     private JTextField name;
     private ButtonGroup gender, unusual, oldfashioned;
     private JComboBox CountryList;
-    private Object country;
+    private String country;
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -134,7 +134,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	CountryList.setSelectedIndex(0);
 	pane.add(text7);
 	pane.add(CountryList);
-	country = CountryList.getSelectedItem();
+	country = (String)CountryList.getSelectedItem();
 	
 	enter = new JButton("Give me a name!");
 	pane.add(enter);
@@ -168,37 +168,38 @@ public class GenerateName extends JFrame implements ActionListener{
 
     public static Integer tryParse(String text) {
 	try {
-	    return new Integer(text);
+	    return Integer.parseInt(text);
 	} catch (NumberFormatException e) {
 	    return null;
 	}
     }
-
-    public static int calculate(ArrayList<Object> me, ArrayList<Object> you){
+    
+    public static int calculate(ArrayList<String> me, ArrayList<String> you){
 	int dif = 0;
 	for (int i = 0; i < me.size(); i++){
 	    if (tryParse((String)me.get(i)) != null){
-		dif += Math.abs(Integer.parseInt(me.get(i).toString()) - Integer.parseInt(you.get(i).toString()));
+		dif += 3*Math.abs(Integer.parseInt(me.get(i).toString()) - Integer.parseInt(you.get(i).toString()));
 	    }
 	    else{
 		if (!me.get(i).equals(you.get(i))){
-		    dif += 5;
+		    dif += 25;
 		}
 	    }
 	}
 	return 100 - dif;
     }
-
+    
+    
     public static ArrayList<String[]> loadAllNames(String file){
 	String s = "Hi Mr. K!";
 	ArrayList<String[]> dictionary = new ArrayList<String[]>();
      
 	try {
 	    FileReader f = new FileReader(file);
-	    BufferedReader b = new BufferedReader(f);
+	    Scanner b = new Scanner(f);
  
-	    while( s != null ) {
-		s = b.readLine();
+	    while( b.hasNextLine() ) {
+		s = b.nextLine();
 		if ( s != null )
 		    dictionary.add(s.split(", "));
             }
@@ -227,7 +228,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	ArrayList<String> girls = allNames("girls.csv");
 	ArrayList<String> boys = allNames("boys.csv");
 	ArrayList<String> names = new ArrayList<String>();
-        for (int i = 0; i < girls.size(); i++){
+        for (int i = 1; i < girls.size(); i++){
 	    if (boys.contains(girls.get(i))){
 		names.add(girls.get(i));
 	    }
@@ -235,38 +236,35 @@ public class GenerateName extends JFrame implements ActionListener{
 	return names;
     }
     
-    public static ArrayList<ArrayList<Object>> attributeAll(String file) {
+    public static ArrayList<ArrayList<String>> attributeAll(String file) {
 	ArrayList<String[]> dic = loadAllNames(file);
-    	ArrayList<ArrayList<Object>> att = new ArrayList<ArrayList<Object>>();
-    	for (int i = 0; i< dic.size(); i++) { 
-	    ArrayList<Object>  blah = new ArrayList<Object>(); 
-	    for (int j = 1; j<dic.get(i).length; j++) {  
-		if (tryParse(dic.get(i)[j]) != null){
-		    blah.add(Integer.parseInt(dic.get(i)[j]));
-		}else{
-		    blah.add(dic.get(i)[j]);
-		}
-		
-		att.add(blah);
-	    }
+    	ArrayList<ArrayList<String>> att = new ArrayList<ArrayList<String>>();
+    	for (int i = 1; i< dic.size(); i++) { 
+	    ArrayList<String>  blah = new ArrayList<String>(); 
+	    for (int j = 1; j < dic.get(i).length; j++) {  
+		blah.add(dic.get(i)[j]);
+	    }	
+	    att.add(blah);
 	}
+	
 	return att;
     }
 
 
     public static String findMatch(Person p, String file)  throws IOException{
-	ArrayList<Object> criteria = p.values;
+	ArrayList<String> criteria = p.values;
+	criteria.remove(0);
 	ArrayList<String> names = allNames(file);
-	ArrayList<ArrayList<Object>> possibilities = attributeAll(file);
-	int champPercent = calculate(criteria, possibilities.get(0));
+	ArrayList<ArrayList<String>> possibilities = attributeAll(file);
+	int champPercent = calculate(criteria, possibilities.get(1));
 	int champIndex = 0;
-	for (int i = 1; i< possibilities.size(); i++) {
+	for (int i = 2; i< possibilities.size(); i++) {
 	    if (calculate(criteria, possibilities.get(i)) > champPercent) {
 		champPercent = calculate(criteria, possibilities.get(i));
 		champIndex = i;
 	    }
 	}
-	return "The name that most closely matches what you wanted is " +names.get(champIndex)+" with a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return "The name that most closely matches what you wanted is " +names.get(champIndex)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
 
     public void actionPerformed(ActionEvent e){
@@ -276,8 +274,9 @@ public class GenerateName extends JFrame implements ActionListener{
 	      try {
 		  NAME.setText(findMatch(p, getCSV()));
 		  NAME.setVisible(true);
-	    }
-	    catch (IOException x) {}
+	      }
+	      catch (IOException x) {
+		  System.out.println("you suck");}
 	}
     }  
 
