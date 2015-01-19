@@ -11,6 +11,7 @@ public class GenerateName extends JFrame implements ActionListener{
     private JTextField name;
     private ButtonGroup gender, unusual, oldfashioned;
     private JComboBox CountryList;
+    private Object country;
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -26,42 +27,40 @@ public class GenerateName extends JFrame implements ActionListener{
 	pane.add(text);
 
         
-		
-	JRadioButton BoyButton = new JRadioButton("Boy");
-	BoyButton.setSelected(true);
+	JRadioButton BoyButton = new JRadioButton("Boy",true);
 	JRadioButton GirlButton = new JRadioButton("Girl");
 	JRadioButton BothButton = new JRadioButton("Both");
-        unusual = new ButtonGroup();
-	unusual.add(BoyButton);
-	unusual.add(GirlButton);
-	unusual.add(BothButton);
+        gender = new ButtonGroup();
+	gender.add(BoyButton);
+	gender.add(GirlButton);
+	gender.add(BothButton);
 	JPanel radioPanel = new JPanel(new GridLayout(1, 0));
         radioPanel.add(BoyButton);
         radioPanel.add(GirlButton);
 	radioPanel.add(BothButton);
 
+
 	JRadioButton Button1 = new JRadioButton("1");
 	JRadioButton Button2 = new JRadioButton("2");
 	JRadioButton Button3 = new JRadioButton("3");
 	JRadioButton Button4 = new JRadioButton("4");
-	JRadioButton Button5 = new JRadioButton("5");	
-	Button5.setSelected(true);
+	JRadioButton Button5 = new JRadioButton("5",true);	
 	JRadioButton Button6 = new JRadioButton("6");
 	JRadioButton Button7 = new JRadioButton("7");
 	JRadioButton Button8 = new JRadioButton("8");
 	JRadioButton Button9 = new JRadioButton("9");
 	JRadioButton Button10 = new JRadioButton("10");
-	ButtonGroup group2 = new ButtonGroup();
-	group2.add(Button1);
-	group2.add(Button2);
-	group2.add(Button3);
-	group2.add(Button4);
-	group2.add(Button5);
-	group2.add(Button6);
-	group2.add(Button7);
-	group2.add(Button8);
-	group2.add(Button9);
-	group2.add(Button10);
+	ButtonGroup unusual = new ButtonGroup();
+	unusual.add(Button1);
+	unusual.add(Button2);
+	unusual.add(Button3);
+	unusual.add(Button4);
+	unusual.add(Button5);
+	unusual.add(Button6);
+	unusual.add(Button7);
+	unusual.add(Button8);
+	unusual.add(Button9);
+	unusual.add(Button10);
 	JPanel radioPanel2 = new JPanel(new GridLayout(1, 0));
         radioPanel2.add(Button1);
         radioPanel2.add(Button2);
@@ -79,8 +78,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	JRadioButton B2 = new JRadioButton("2");
 	JRadioButton B3 = new JRadioButton("3");
 	JRadioButton B4 = new JRadioButton("4");
-	JRadioButton B5 = new JRadioButton("5");
-	B5.setSelected(true);
+	JRadioButton B5 = new JRadioButton("5",true);
 	JRadioButton B6 = new JRadioButton("6");
 	JRadioButton B7 = new JRadioButton("7");
 	JRadioButton B8 = new JRadioButton("8");
@@ -112,30 +110,31 @@ public class GenerateName extends JFrame implements ActionListener{
 	text2 = new JTextArea("Is it a boy's name, a girl's name, or can it be both?");
 	text2.setEditable(false);
 	pane.add(text2);
-	add(radioPanel, BorderLayout.LINE_START);
+	pane.add(radioPanel, BorderLayout.LINE_START);
 	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual");
 	text3.setEditable(false);
 	pane.add(text3);
 	text4 = new JTextArea("Ex. Mary would be rated a 1, Ximena would be rated a 10");
 	text4.setEditable(false);
 	pane.add(text4);
-	add(radioPanel2, BorderLayout.LINE_START);
+	pane.add(radioPanel2, BorderLayout.LINE_START);
 	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned");
 	text5.setEditable(false);
 	pane.add(text5);
 	text6 = new JTextArea("Ex. Mary would be rated a 10, Ximena would be rated a 1");
 	text6.setEditable(false);
 	pane.add(text6);
-	add(radioPanel3, BorderLayout.LINE_START);
+	pane.add(radioPanel3, BorderLayout.LINE_START);
 
 
 	text7 = new JTextArea("Choose the origin of the name you want.");
 	text7.setEditable(false);
 	String[] CountryStrings = { "Germanic", "Latin", "Hebrew", "Greek", "Other" };
 	CountryList = new JComboBox(CountryStrings);
-	CountryList.setSelectedIndex(1);
+	CountryList.setSelectedIndex(0);
 	pane.add(text7);
 	pane.add(CountryList);
+	country = CountryList.getSelectedItem();
 	
 	enter = new JButton("Give me a name!");
 	pane.add(enter);
@@ -149,7 +148,8 @@ public class GenerateName extends JFrame implements ActionListener{
     }
 
     public String buttonVal(ButtonGroup b){
-	for (Enumeration<AbstractButton> buttons = b.getElements(); buttons.hasMoreElements();){
+	Enumeration<AbstractButton> buttons = b.getElements();
+        while (buttons.hasMoreElements()){
 	    AbstractButton button = buttons.nextElement();
 	    if (button.isSelected()){
 		return button.getText();
@@ -177,14 +177,12 @@ public class GenerateName extends JFrame implements ActionListener{
     public static int calculate(ArrayList<Object> me, ArrayList<Object> you){
 	int dif = 0;
 	for (int i = 0; i < me.size(); i++){
-	    if (me.get(i) instanceof Integer){
+	    if (tryParse((String)me.get(i)) != null){
 		dif += Math.abs(Integer.parseInt(me.get(i).toString()) - Integer.parseInt(you.get(i).toString()));
 	    }
-	    if (me.get(i) instanceof String){
-		if (me.get(i).equals(you.get(i))){
-		    dif -= 3;
-		}else{
-		    dif += 3;
+	    else{
+		if (!me.get(i).equals(you.get(i))){
+		    dif += 5;
 		}
 	    }
 	}
@@ -219,7 +217,6 @@ public class GenerateName extends JFrame implements ActionListener{
 	    for (int i = 0; i<dic.size(); i++) {
 		names.add(dic.get(i)[0]);
 	    }
-	    
 	}else{
 	    names = bothNames();
 	   
@@ -227,9 +224,14 @@ public class GenerateName extends JFrame implements ActionListener{
 	return names;
     }
     public static ArrayList<String> bothNames(){
+	ArrayList<String> girls = allNames("girls.csv");
+	ArrayList<String> boys = allNames("boys.csv");
 	ArrayList<String> names = new ArrayList<String>();
-	names = allNames("girls.csv");
-	names = allNames("boys.csv");
+        for (int i = 0; i < girls.size(); i++){
+	    if (boys.contains(girls.get(i))){
+		names.add(girls.get(i));
+	    }
+	}
 	return names;
     }
     
@@ -270,7 +272,7 @@ public class GenerateName extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String action = e.getActionCommand();
 	if (action.equals("go")){
-	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), (String)CountryList.getSelectedItem());
+	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), country);
 	      try {
 		  NAME.setText(findMatch(p, getCSV()));
 		  NAME.setVisible(true);
