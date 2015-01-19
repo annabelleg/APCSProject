@@ -94,18 +94,15 @@ APCSProject
 - added origin of all the names to the csv's
 - added window that pops up if the name you're trying to enter is already in the csv file (Error.java)
 - added code that checks if the name you're trying to add is already in the csv file
+- HECK YEAH WE FINISHED THE GENERATENAME THING EXCEPT FOR IF YOU WANT A NAME THAT FITS BOTH BUT WE'LL FIX THAT SOON WOW I FEEL ACCOMPLISHED
+  - we just need to fix it for if you want "Both"
+  - and also have it return the top 3 values and some info about them (origin, meaning, etc) instead of just one
+  - I'm so happy Mr. K
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
 - input all the values for the csv's of names
-- write the code to add a name and its values to the csv (EnterName.java)
-  - we have code to put the values into a Person but we need to add the Person to the csv <--*THIS IS DONE MUAHAHAAHAA*
-- add method to tell you if the name you want to enter is already in the system 
-- finish writing the code to find the perfect match based on what you want (devise a mathematical somethin!)
-  - to do this we need:
-    - a way to run through the csv
-    - a way to calculate compatability for each name <-- *look at calculate() code in GenerateName.java*
-    - a way to store and return the top three highest matches and some of their information
+- finish up GenerateName (see 1/18/15)
 - finish all the GUI stuff:
   - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
   - make it look pretty
