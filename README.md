@@ -88,6 +88,7 @@ APCSProject
 ###### 1/18/15
 - added dropdown menu for language of origin to GenerateName
   - however, we're getting the same error as we got last night: a NullPointerException that says there's no outputted value for the Gender radio buttons (i assume this extends to the other sets of radio buttons)
+- fixed the error for EnterNewName that arose as a result of adding the JComboBox
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
