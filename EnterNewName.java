@@ -15,12 +15,12 @@ public class EnterNewName extends JFrame implements ActionListener{
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(900,500);
+	this.setSize(550,700);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new GridLayout(6,2));
+	pane.setLayout(new GridLayout(11,1));
 
 	text = new JTextArea("Here you can a new name to our current list!\nThis can help widen the variety of our name generator.");
 	text.setEditable(false);
