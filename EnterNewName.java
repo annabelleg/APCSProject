@@ -177,17 +177,23 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
     
     public boolean checkName(String name, String file){
-	File f = new File(file);
-	try {
-	    Scanner scanner = new Scanner(f);
-	    while (scanner.hasNextLine()) {
-		String line = scanner.nextLine();
+	if (file.equals("boys.csv") || file.equals("girls.csv")){
+	    File f = new File(file);
+	    try {
+		Scanner scanner = new Scanner(f);
+		while (scanner.hasNextLine()) {
+		    String line = scanner.nextLine();
 		if (line.contains(name)) { 
 		    return false;
 		}
-	    }
-	} catch(FileNotFoundException e) {}
-	return true;
+		}
+	    } catch(FileNotFoundException e) {}
+	    return true;
+	}else{
+	    if (checkName(name, "boys.csv")){
+		return checkName(name, "girls.csv");
+	    }else{ return false; }
+	}
     }
     
     public void AddName(Person p, String csv) throws IOException{
