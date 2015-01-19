@@ -203,3 +203,4 @@ public class EnterNewName extends JFrame implements ActionListener{
 	g.setVisible(true);
     }
 }
+ 
