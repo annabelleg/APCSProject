@@ -11,6 +11,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     private JTextField name;
     private JComboBox CountryList;
     private ButtonGroup gender, unusual, oldfashioned;
+    Object country;
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -137,8 +138,13 @@ public class EnterNewName extends JFrame implements ActionListener{
 	String[] CountryStrings = { "Germanic", "Latin", "Greek", "Hebrew", "Other" };
 
 	JComboBox CountryList = new JComboBox(CountryStrings);
-	CountryList.setSelectedIndex(1);
+	CountryList.setSelectedIndex(0);
+	CountryList.setEnabled(true);
+	CountryList.setEditable(false);
 	pane.add(CountryList);
+	//	CountryList.setActionCommand("go");
+	CountryList.addActionListener(this);
+	country = CountryList.getSelectedItem();
 	
 	add = new JButton("Add Name!");
 	pane.add(add);
@@ -158,7 +164,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
 
     public void collectData() throws IOException{
-	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), (String)CountryList.getSelectedItem());
+	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), country);
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
