@@ -15,12 +15,12 @@ public class EnterNewName extends JFrame implements ActionListener{
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(500,500);
+	this.setSize(900,500);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new FlowLayout());
+	pane.setLayout(new GridLayout(6,2));
 
 	text = new JTextArea("Here you can a new name to our current list!\nThis can help widen the variety of our name generator.");
 	text.setEditable(false);
@@ -117,19 +117,13 @@ public class EnterNewName extends JFrame implements ActionListener{
 	text2.setEditable(false);
 	pane.add(text2);
 	add(radioPanel, BorderLayout.LINE_START);
-	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual");
+	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual \nEx. Mary would be rated a 1, Ximena would be rated a 10");
 	text3.setEditable(false);
 	pane.add(text3);
-	text4 = new JTextArea("Ex. Mary would be rated a 1, Ximena would be rated a 10");
-	text4.setEditable(false);
-	pane.add(text4);
 	add(radioPanel2, BorderLayout.LINE_START);
-	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned");
+	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned \nEx. Mary would be rated a 10, Ximena would be rated a 1");
 	text5.setEditable(false);
 	pane.add(text5);
-	text6 = new JTextArea("Ex. Mary would be rated a 10, Ximena would be rated a 1");
-	text6.setEditable(false);
-	pane.add(text6);
 	add(radioPanel3, BorderLayout.LINE_START);
 	text7 = new JTextArea("What is the name's origin?");
 	text7.setEditable(false);
@@ -203,4 +197,3 @@ public class EnterNewName extends JFrame implements ActionListener{
 	g.setVisible(true);
     }
 }
- 
