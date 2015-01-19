@@ -50,7 +50,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	JRadioButton Button8 = new JRadioButton("8");
 	JRadioButton Button9 = new JRadioButton("9");
 	JRadioButton Button10 = new JRadioButton("10");
-	ButtonGroup unusual = new ButtonGroup();
+        unusual = new ButtonGroup();
 	unusual.add(Button1);
 	unusual.add(Button2);
 	unusual.add(Button3);
