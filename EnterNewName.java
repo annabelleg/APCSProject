@@ -11,7 +11,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     private JTextField name;
     private JComboBox CountryList;
     private ButtonGroup gender, unusual, oldfashioned;
-    Object country;
+    private String country;
 
     public EnterNewName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
@@ -138,7 +138,7 @@ public class EnterNewName extends JFrame implements ActionListener{
 	pane.add(CountryList);
 	//	CountryList.setActionCommand("go");
 	CountryList.addActionListener(this);
-	country = CountryList.getSelectedItem();
+	country = (String)CountryList.getSelectedItem();
 	
 	add = new JButton("Add Name!");
 	pane.add(add);
@@ -158,14 +158,38 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
 
     public void collectData() throws IOException{
-	Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), country);
 	String csv = "";
 	if (buttonVal(gender).equals("Boy")) csv = "boys.csv";
 	if (buttonVal(gender).equals("Girl")) csv = "girls.csv";
 	if (buttonVal(gender).equals("Both")) csv = "both";
-	AddName(p, csv);
+	if (checkName(name.getText(), csv)){
+	    Person p = new Person(name.getText(), buttonVal(unusual), buttonVal(oldfashioned), country);
+	    AddName(p, csv);
+	    Finished f = new Finished();
+	    f.setVisible(true);
+	    this.dispose();
+	}else{
+	    Error e = new Error();
+	    e.setVisible(true);
+	    e.toFront();
+	    //  this.toBack();
+	}
     }
-
+    
+    public boolean checkName(String name, String file){
+	File f = new File(file);
+	try {
+	    Scanner scanner = new Scanner(f);
+	    while (scanner.hasNextLine()) {
+		String line = scanner.nextLine();
+		if (line.contains(name)) { 
+		    return false;
+		}
+	    }
+	} catch(FileNotFoundException e) {}
+	return true;
+    }
+    
     public void AddName(Person p, String csv) throws IOException{
 	String content = p.qualities();
 	if (csv.equals("boys.csv") || csv.equals("girls.csv")){
@@ -183,9 +207,6 @@ public class EnterNewName extends JFrame implements ActionListener{
 	try {
 	    if (action.equals("go")){
 		collectData();
-		Finished f = new Finished();
-		f.setVisible(true);
-		this.dispose();
 	    }
 	} catch (IOException e1) {
 	    throw new RuntimeException(e1);
