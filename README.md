@@ -91,6 +91,7 @@ APCSProject
 - fixed the error for EnterNewName that arose as a result of adding the JComboBox
 - updated the calculation code so it actually works how we want it to (it didn't before)
 - Made the EnterNewName GUI pretty
+- added origin of names to the csv's
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
