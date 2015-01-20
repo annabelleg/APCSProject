@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import java.io.*;
-
+ 
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
     private JTextArea text, text2, text3, text4, text5, text6, text7, NAME;
