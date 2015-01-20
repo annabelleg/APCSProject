@@ -256,15 +256,15 @@ public class GenerateName extends JFrame implements ActionListener{
 	criteria.remove(0);
 	ArrayList<String> names = allNames(file);
 	ArrayList<ArrayList<String>> possibilities = attributeAll(file);
-	int champPercent = calculate(criteria, possibilities.get(0));
+	int champPercent = 0;
 	int champIndex = 0;
-	for (int i = 2; i< possibilities.size(); i++) {
+	for (int i = 0; i< possibilities.size(); i++) {
 	    if (calculate(criteria, possibilities.get(i)) > champPercent) {
 		champPercent = calculate(criteria, possibilities.get(i));
 		champIndex = i;
 	    }
 	}
-	return "The name that most closely matches what you wanted is " +names.get(champIndex)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
 
     public void actionPerformed(ActionEvent e){
