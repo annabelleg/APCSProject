@@ -15,13 +15,13 @@ public class Finished extends JFrame implements ActionListener{
     public Finished(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
 	this.setSize(400,200);
-	this.setLocation(100,50);
+	this.setLocation(100,200);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
 	pane.setLayout(new GridLayout(4,1));
 
-	text = new JTextArea("Thank you! What would you like to do now?");
+	text = new JTextArea("Thank you for entering a name! What would you like to do now?");
 	text.setEditable(false);
 
 pane.add(text);
