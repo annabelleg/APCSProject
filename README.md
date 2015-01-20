@@ -106,11 +106,3 @@ APCSProject
 - UPDATE: WE FIXED THE THING JK AARON FIXED THE THING I OWE HIM MY FIRSTBORN SON
 - so basically what we're telling you is that we rock
  
-
-####THINGS WE HAVE YET TO DO/FIX:
-- input all the values for the csv's of names
-- finish up GenerateName (see 1/18/15)
-- finish all the GUI stuff:
-  - add all the radio buttons/drop-down menus/etc to EnterName and GenerateName for each value we want to compute
-  - make it look pretty
-- find the names of our future children that we are having together
