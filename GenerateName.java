@@ -15,7 +15,7 @@ public class GenerateName extends JFrame implements ActionListener{
 
     public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(500,500);
+	this.setSize(550,700);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
