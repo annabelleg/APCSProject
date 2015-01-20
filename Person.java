@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.*;
 
 public class Person{
-    ArrayList<Object> values;
+    ArrayList<String> values;
 
-    public Person(String name, String unusual, String oldfashioned, Object country){
-	values = new ArrayList<Object>();
+    public Person(String name, String unusual, String oldfashioned, String country){
+	values = new ArrayList<String>();
 	values.add(name);
 	values.add(unusual);
 	values.add(oldfashioned);
