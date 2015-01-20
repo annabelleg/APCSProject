@@ -13,7 +13,7 @@ public class GenerateName extends JFrame implements ActionListener{
     private JComboBox CountryList;
     private String country;
 
-    public GenerateName(){
+ public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
 	this.setSize(550,700);
 	this.setLocation(200,100);
@@ -142,6 +142,7 @@ public class GenerateName extends JFrame implements ActionListener{
 
     }
 
+
     public String buttonVal(ButtonGroup b){
 	Enumeration<AbstractButton> buttons = b.getElements();
         while (buttons.hasMoreElements()){
@@ -188,34 +189,38 @@ public class GenerateName extends JFrame implements ActionListener{
     public static ArrayList<String[]> loadAllNames(String file){
 	String s = "Hi Mr. K!";
 	ArrayList<String[]> dictionary = new ArrayList<String[]>();
-     
-	try {
-	    FileReader f = new FileReader(file);
-	    Scanner b = new Scanner(f);
- 
-	    while( b.hasNextLine() ) {
-		s = b.nextLine();
-		if ( s != null )
-		    dictionary.add(s.split(", "));
-            }
-	    
-        }
-	catch (IOException e) {}
-   
-
+	if (file.equals("girls.csv")||file.equals("boys.csv")){
+	    try {
+		FileReader f = new FileReader(file);
+		Scanner b = new Scanner(f);
+		
+		while( b.hasNextLine() ) {
+		    s = b.nextLine();
+		    if ( s != null )
+			dictionary.add(s.split(", "));
+		}
+		return dictionary;
+	    }
+	    catch (IOException e) {}
+	}else{
+	    ArrayList<String[]> boys = loadAllNames("boys.csv");
+	    ArrayList<String[]> girls = loadAllNames("girls.csv");
+	    for (int i = 1; i < boys.size(); i++){
+		for (int j = 1; j < girls.size(); j++){
+		    if (girls.get(j)[0].equals(boys.get(i)[0])){
+			dictionary.add(boys.get(i));
+		    }
+		}
+	    }
+	}
 	return dictionary;
     }
     
     public static ArrayList<String> allNames(String file){
 	ArrayList<String> names = new ArrayList<String>();
-	if (file.equals("boys.csv") || file.equals("girls.csv")){
-	    ArrayList<String[]> dic = loadAllNames(file);
-	    for (int i = 0; i<dic.size(); i++) {
-		names.add(dic.get(i)[0]);
-	    }
-	}else{
-	    names = bothNames();
-	   
+	ArrayList<String[]> dic = loadAllNames(file);
+	for (int i = 0; i<dic.size(); i++) {
+	    names.add(dic.get(i)[0]);
 	}
 	return names;
     }
@@ -251,7 +256,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	criteria.remove(0);
 	ArrayList<String> names = allNames(file);
 	ArrayList<ArrayList<String>> possibilities = attributeAll(file);
-	int champPercent = calculate(criteria, possibilities.get(1));
+	int champPercent = calculate(criteria, possibilities.get(0));
 	int champIndex = 0;
 	for (int i = 2; i< possibilities.size(); i++) {
 	    if (calculate(criteria, possibilities.get(i)) > champPercent) {
