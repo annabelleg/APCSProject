@@ -262,7 +262,7 @@ public class GenerateName extends JFrame implements ActionListener{
 		champIndex = i;
 	    }
 	}
-	return criteria + "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
 
     public void actionPerformed(ActionEvent e){
