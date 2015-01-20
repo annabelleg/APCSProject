@@ -10,7 +10,7 @@ APCSProject
     - how modern/old-fashioned it is
     - popularity
     - country of origin
-    - how normal the name is (different from popularity--this is like how unusual the name is
+    - how normal the name is (different from popularity--this is like how unusual the name is)
 
   We will use Processing or GUI to create a window where the user can enter their preferences (drop-down list for country of origin, sliding scale or radio buttons for 1-10 of things like popularity, etc). The user will click "Submit" and a list of the top name will come up that match their criteria. The names (and their values for each input) will be stored in a csv file. 
 
