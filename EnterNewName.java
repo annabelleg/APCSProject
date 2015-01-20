@@ -28,7 +28,7 @@ public class EnterNewName extends JFrame implements ActionListener{
 
 	name = new JTextField(12);
 	pane.add(name);
-
+	
 	JRadioButton BoyButton = new JRadioButton("Boy");
 	BoyButton.setSelected(true);
 	JRadioButton GirlButton = new JRadioButton("Girl");
@@ -127,15 +127,8 @@ public class EnterNewName extends JFrame implements ActionListener{
 	pane.add(text7);
 
 	String[] CountryStrings = { "Germanic", "Latin", "Greek", "Hebrew", "Other" };
-
-	JComboBox CountryList = new JComboBox(CountryStrings);
-	CountryList.setSelectedIndex(0);
-	CountryList.setEnabled(true);
-	CountryList.setEditable(false);
+	CountryList = new JComboBox(CountryStrings);
 	pane.add(CountryList);
-	//	CountryList.setActionCommand("go");
-	CountryList.addActionListener(this);
-	country = (String)CountryList.getSelectedItem();
 	
 	add = new JButton("Add Name!");
 	pane.add(add);
@@ -206,6 +199,7 @@ public class EnterNewName extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
+	country = (String)CountryList.getSelectedItem();
 	String action = e.getActionCommand();
 	try {
 	    if (action.equals("go")){
