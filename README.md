@@ -103,6 +103,7 @@ APCSProject
 - we are now a little less happy because we discovered we have a bug that the Origin of the name it searches for is automatically set to whatever thing it's defaulted to in the constructor, so now we have to fix that
 - on the bright side, we made it so GenerateName can take "Both" as an option
 - and we made the GUIs look prettier
+- UPDATE: WE FIXED THE THING JK AARON FIXED THE THING I OWE HIM MY FIRSTBORN SON
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
