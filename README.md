@@ -104,6 +104,7 @@ APCSProject
 - on the bright side, we made it so GenerateName can take "Both" as an option
 - and we made the GUIs look prettier
 - UPDATE: WE FIXED THE THING JK AARON FIXED THE THING I OWE HIM MY FIRSTBORN SON
+- so basically what we're telling you is that we rock
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
