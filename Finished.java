@@ -14,12 +14,12 @@ public class Finished extends JFrame implements ActionListener{
 
     public Finished(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(500,500);
-	this.setLocation(200,100);
+	this.setSize(400,200);
+	this.setLocation(100,50);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new FlowLayout());//set this based on what will be good
+	pane.setLayout(new GridLayout(4,1));
 
 	text = new JTextArea("Thank you! What would you like to do now?");
 	text.setEditable(false);
