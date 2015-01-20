@@ -126,10 +126,8 @@ public class GenerateName extends JFrame implements ActionListener{
 	text7.setEditable(false);
 	String[] CountryStrings = { "Germanic", "Latin", "Hebrew", "Greek", "Other" };
 	CountryList = new JComboBox(CountryStrings);
-	CountryList.setSelectedIndex(0);
 	pane.add(text7);
 	pane.add(CountryList);
-	country = (String)CountryList.getSelectedItem();
 	
 	enter = new JButton("Give me a name!");
 	pane.add(enter);
@@ -177,7 +175,7 @@ public class GenerateName extends JFrame implements ActionListener{
 		dif += 3*Math.abs(Integer.parseInt(me.get(i).toString()) - Integer.parseInt(you.get(i).toString()));
 	    }
 	    else{
-		if (!me.get(i).equals(you.get(i))){
+		if (!(me.get(i).equals(you.get(i)))){
 		    dif += 25;
 		}
 	    }
@@ -264,10 +262,11 @@ public class GenerateName extends JFrame implements ActionListener{
 		champIndex = i;
 	    }
 	}
-	return "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return criteria + "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
 
     public void actionPerformed(ActionEvent e){
+	country = (String)CountryList.getSelectedItem();
 	String action = e.getActionCommand();
 	if (action.equals("go")){
 	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), country);
