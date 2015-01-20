@@ -20,7 +20,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new FlowLayout());
+       pane.setLayout(new GridLayout(11,1));
 
 	text = new JTextArea("Let's find you a name!\nJust answer all the questions below\nand we will give you your top 3 matches.");
 	text.setEditable(false);
@@ -111,20 +111,15 @@ public class GenerateName extends JFrame implements ActionListener{
 	text2.setEditable(false);
 	pane.add(text2);
 	pane.add(radioPanel, BorderLayout.LINE_START);
-	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual");
+	text3 = new JTextArea("Rate how unusual the name is from 1 to 10,\nwith 10 being the most unusual \nEx. Mary would be rated a 1, Ximena would be rated a 10");
 	text3.setEditable(false);
 	pane.add(text3);
-	text4 = new JTextArea("Ex. Mary would be rated a 1, Ximena would be rated a 10");
-	text4.setEditable(false);
-	pane.add(text4);
 	pane.add(radioPanel2, BorderLayout.LINE_START);
-	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned");
+	text5 = new JTextArea("Rate how old-fashioned the name is from 1 to 10,\nwith 10 being the most old-fashioned \nEx. Mary would be rated a 10, Ximena would be rated a 1");
 	text5.setEditable(false);
 	pane.add(text5);
-	text6 = new JTextArea("Ex. Mary would be rated a 10, Ximena would be rated a 1");
-	text6.setEditable(false);
-	pane.add(text6);
 	pane.add(radioPanel3, BorderLayout.LINE_START);
+
 
 
 	text7 = new JTextArea("Choose the origin of the name you want.");
