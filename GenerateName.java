@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import java.io.*;
- 
+
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
     private JTextArea text, text2, text3, text4, text5, text6, text7, NAME;
@@ -20,7 +20,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-       pane.setLayout(new GridLayout(11,1));
+	pane.setLayout(new GridLayout(11,1));
 
 	text = new JTextArea("Let's find you a name!\nJust answer all the questions below\nand we will give you your top 3 matches.");
 	text.setEditable(false);
@@ -119,8 +119,6 @@ public class GenerateName extends JFrame implements ActionListener{
 	text5.setEditable(false);
 	pane.add(text5);
 	pane.add(radioPanel3, BorderLayout.LINE_START);
-
-
 
 	text7 = new JTextArea("Choose the origin of the name you want.");
 	text7.setEditable(false);
@@ -262,7 +260,7 @@ public class GenerateName extends JFrame implements ActionListener{
 		champIndex = i;
 	    }
 	}
-	return "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	return  "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
     }
 
     public void actionPerformed(ActionEvent e){
