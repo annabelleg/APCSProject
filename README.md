@@ -98,6 +98,11 @@ APCSProject
   - we just need to fix it for if you want "Both"
   - and also have it return the top 3 values and some info about them (origin, meaning, etc) instead of just one
   - I'm so happy Mr. K
+
+###### 1/19/15
+- we are now a little less happy because we discovered we have a bug that the Origin of the name it searches for is automatically set to whatever thing it's defaulted to in the constructor, so now we have to fix that
+- on the bright side, we made it so GenerateName can take "Both" as an option
+- and we made the GUIs look prettier
  
 
 ####THINGS WE HAVE YET TO DO/FIX:
