@@ -29,9 +29,6 @@ public class EnterNewName extends JFrame implements ActionListener{
 	name = new JTextField(12);
 	pane.add(name);
 
-
-	
-	
 	JRadioButton BoyButton = new JRadioButton("Boy");
 	BoyButton.setSelected(true);
 	JRadioButton GirlButton = new JRadioButton("Girl");
