@@ -137,6 +137,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	NAME = new JTextArea();
 	pane.add(NAME);
 	NAME.setVisible(false);
+	NAME.setEditable(false);
 
 	//if you get bored and want to leave
 	close = new JButton("Okay, I'm done!");
