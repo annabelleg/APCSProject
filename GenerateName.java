@@ -7,7 +7,7 @@ import java.io.*;
 public class GenerateName extends JFrame implements ActionListener{
     private Container pane;
     private JTextArea text, text2, text3, text4, text5, text6, text7, NAME;
-    private JButton enter;
+    private JButton enter, close;
     private JTextField name;
     private ButtonGroup gender, unusual, oldfashioned;
     private JComboBox CountryList;
@@ -20,7 +20,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new GridLayout(11,1));
+	pane.setLayout(new GridLayout(12,1));
 
 	text = new JTextArea("Let's find you a name!\nJust answer all the questions below\nand we will give you your top 3 matches.");
 	text.setEditable(false);
@@ -126,15 +126,23 @@ public class GenerateName extends JFrame implements ActionListener{
 	CountryList = new JComboBox(CountryStrings);
 	pane.add(text7);
 	pane.add(CountryList);
-	
+
+	//the button to generate the name	
 	enter = new JButton("Give me a name!");
 	pane.add(enter);
 	enter.setActionCommand("go");
 	enter.addActionListener(this);
 
+	//where the name will show up
 	NAME = new JTextArea();
 	pane.add(NAME);
 	NAME.setVisible(false);
+
+	//if you get bored and want to leave
+	close = new JButton("Okay, I'm done!");
+	pane.add(close);
+	close.setActionCommand("leave");
+	close.addActionListener(this);
 
     }
 
@@ -274,6 +282,10 @@ public class GenerateName extends JFrame implements ActionListener{
 	      }
 	      catch (IOException x) {
 		  System.out.println("you suck");}
+	}else if (action.equals("leave")){
+	    Finished f = new Finished();
+	    f.setVisible(true);
+	    this.dispose();
 	}
     }  
 
