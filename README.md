@@ -103,3 +103,8 @@ APCSProject
 - UPDATE: WE FIXED THE THING JK AARON FIXED THE THING I OWE HIM MY FIRSTBORN SON
 - so basically what we're telling you is that we rock
  
+###### 1/20/15
+- made GenerateName return the TOP THREE names instead of just one
+  - w0w
+- added a "goodbye" button on GenerateName so you can get the heck outta there
+- we're finished wahooooo
