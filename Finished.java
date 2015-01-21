@@ -24,7 +24,7 @@ public class Finished extends JFrame implements ActionListener{
 	text = new JTextArea("Thank you!! What would you like to do now?");
 	text.setEditable(false);
 
-pane.add(text);
+	pane.add(text);
 	entername = new JButton("Enter a new name!");
 	generatename = new JButton("Give me a name!");
 	end = new JButton("Quit the program :( ");
