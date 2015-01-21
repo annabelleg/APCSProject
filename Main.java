@@ -1,6 +1,6 @@
 import java.awt.event.*;
 import javax.swing.*;
-import java.awt.*; //needed for pane
+import java.awt.*;
 public class Main extends JFrame implements ActionListener{
     private Container main,pane,pane2, pane3, introstuff;
     private JButton entername, generatename;
@@ -13,14 +13,14 @@ public class Main extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = this.getContentPane();
-	pane.setLayout(new GridLayout(3,1));//set this based on what will be good
+	pane.setLayout(new GridLayout(3,1));
 
 	text = new JTextArea("Welcome to our name generator! You can either enter a name into our system \nor have a name generated for you based on some questions we ask you.\n Which would you like to do?");
 	text.setEditable(false);
 
 	
 	pane.add(text);
-	entername = new JButton("Enter a new name");
+	entername = new JButton("Enter a new name!");
 	generatename = new JButton("Give me a name!");
 
 	entername.setActionCommand("new");
