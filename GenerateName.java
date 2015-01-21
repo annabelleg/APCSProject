@@ -15,7 +15,7 @@ public class GenerateName extends JFrame implements ActionListener{
 
  public GenerateName(){
 	this.setTitle("Aaron and Annabelle's Name Generator!");
-	this.setSize(550,700);
+	this.setSize(550,800);
 	this.setLocation(200,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -254,30 +254,49 @@ public class GenerateName extends JFrame implements ActionListener{
 	return att;
     }
 
-
-    public static String findMatch(Person p, String file)  throws IOException{
+    public static ArrayList<ArrayList<String>> findTop3(Person p, String file) throws IOException{
 	ArrayList<String> criteria = p.values;
 	criteria.remove(0);
 	ArrayList<String> names = allNames(file);
+	names.remove(0);
 	ArrayList<ArrayList<String>> possibilities = attributeAll(file);
-	int champPercent = 0;
-	int champIndex = 0;
-	for (int i = 0; i< possibilities.size(); i++) {
-	    if (calculate(criteria, possibilities.get(i)) > champPercent) {
-		champPercent = calculate(criteria, possibilities.get(i));
-		champIndex = i;
+	ArrayList<ArrayList<String>> sorted = new ArrayList<ArrayList<String>>();
+	for (int i = 0; i < possibilities.size(); i ++){
+	    possibilities.get(i).add(0, ""+calculate(criteria, possibilities.get(i)));
+	    possibilities.get(i).add(1, names.get(i));
+	}
+	return possibilities;
+    }
+    public static String getTop3(ArrayList<ArrayList<String>> a){
+	ArrayList<ArrayList<String>> top3 = new ArrayList<ArrayList<String>>(); 
+	for (int i = 0; i < 3; i++){
+	    top3.add(a.get(i));
+	}
+
+	for (int i = 0; i < a.size() ; i++){
+	    boolean Set = false;
+	    int j = 0;
+	    while (Set == false && j < 3){
+		if (Integer.parseInt(a.get(i).get(0)) >= Integer.parseInt(top3.get(j).get(0))){
+		    top3.set(j, a.get(i));
+		    Set = true;
+		    j = 0;
+		}else{
+		    j++;
+		}
 	    }
 	}
-	return  "The name that most closely matches what you wanted is " +names.get(champIndex + 1)+" \nwith a "+calculate(criteria, possibilities.get(champIndex))+"% match to what you what in a name!";
+	String result = "Your top 3 names are:\n   1. " + top3.get(0).get(1) + " with a " + top3.get(0).get(0) + "% match\n   2. " + top3.get(1).get(1) + " with a " + top3.get(1).get(0) + "% match\n   3. " + top3.get(2).get(1) + " with a " + top3.get(2).get(0) + "% match";
+	return result;
     }
-
+    
     public void actionPerformed(ActionEvent e){
 	country = (String)CountryList.getSelectedItem();
 	String action = e.getActionCommand();
 	if (action.equals("go")){
 	    Person p = new Person("", buttonVal(unusual), buttonVal(oldfashioned), country);
 	      try {
-		  NAME.setText(findMatch(p, getCSV()));
+		  NAME.setText(getTop3(findTop3(p, getCSV())));
 		  NAME.setVisible(true);
 	      }
 	      catch (IOException x) {
