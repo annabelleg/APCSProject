@@ -277,7 +277,7 @@ public class GenerateName extends JFrame implements ActionListener{
 	    boolean Set = false;
 	    int j = 0;
 	    while (Set == false && j < 3){
-		if (Integer.parseInt(a.get(i).get(0)) >= Integer.parseInt(top3.get(j).get(0))){
+		if (Integer.parseInt(a.get(i).get(0)) > Integer.parseInt(top3.get(j).get(0))){
 		    top3.set(j, a.get(i));
 		    Set = true;
 		    j = 0;
