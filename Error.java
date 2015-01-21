@@ -8,7 +8,7 @@ public class Error extends JFrame{
 
     public Error(){
 	this.setTitle("Sorry!");
-	this.setSize(275,80);
+	this.setSize(275,120);
 	this.setLocation(300,150);
 	this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
