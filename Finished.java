@@ -21,11 +21,11 @@ public class Finished extends JFrame implements ActionListener{
 	pane = this.getContentPane();
 	pane.setLayout(new GridLayout(4,1));
 
-	text = new JTextArea("Thank you for entering a name! What would you like to do now?");
+	text = new JTextArea("Thank you!! What would you like to do now?");
 	text.setEditable(false);
 
 pane.add(text);
-	entername = new JButton("Enter a new name");
+	entername = new JButton("Enter a new name!");
 	generatename = new JButton("Give me a name!");
 	end = new JButton("Quit the program :( ");
 
